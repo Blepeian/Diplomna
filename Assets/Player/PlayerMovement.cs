@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
             remainingJumps = maxJumps;
         }
 
-        Move();
+        Move(moveSpeed);
     }
 
     private void GetInput()
@@ -67,9 +67,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Move()
+    private void Move(float speed)
     {
-        body.velocity = new Vector2(direction * moveSpeed, body.velocity.y);
+        body.velocity = new Vector2(direction * speed, body.velocity.y);
 
         if(jumping && remainingJumps > 0)
         {
