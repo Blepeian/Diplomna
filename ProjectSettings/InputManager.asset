@@ -42,7 +42,11 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
+<<<<<<< Updated upstream
     positiveButton: 
+=======
+    positiveButton: u
+>>>>>>> Stashed changes
     altNegativeButton: 
     altPositiveButton: mouse 0
     gravity: 1000
