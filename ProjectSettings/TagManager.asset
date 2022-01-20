@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Terrain
   - Trap
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -15,9 +16,9 @@ TagManager:
   - UI
   - Terrain
   - Trap
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - PlayerAttack
   - 
   - 
   - 
@@ -42,4 +43,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 447851435
+    locked: 0
+  - name: Midground
+    uniqueID: 2643056333
+    locked: 0
+  - name: Player
+    uniqueID: 189403041
+    locked: 0
+  - name: Foreground
+    uniqueID: 640330973
+    locked: 0
+  - name: UI
+    uniqueID: 2851793165
     locked: 0

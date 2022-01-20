@@ -12,6 +12,10 @@ public class PlayerAbilities : MonoBehaviour
     private void Awake()
     {
         abilityNumber = 1;
+        string newAbilityName = "BasicAttack";
+        System.Type newAbility = System.Type.GetType(newAbilityName);
+        Ability1 = (Ability)gameObject.AddComponent(newAbility);
+        Ability1.castPoint = gameObject.transform;
     }
 
     void Update()
@@ -19,40 +23,55 @@ public class PlayerAbilities : MonoBehaviour
         GetInput();
     }
 
-    public void setAbility(int slot, Ability newAbility)
+    public void setAbility(int slot, Ability ability)
     {
-        switch(slot)
-        {
-            case 1:
-                Ability1 = newAbility;
-                break;
-            case 2:
-                Ability2 = newAbility;
-                break;
-            case 3:
-                Ability3 = newAbility;
-                break;
-        }
+        string newAbilityName = ability.scriptName;
+        System.Type newAbility = System.Type.GetType(newAbilityName);
 
         if(abilityNumber < 3)
         {
+            switch(abilityNumber)
+            {
+                case 1:
+                    Ability2 = (Ability)gameObject.AddComponent(newAbility);
+                    break;
+                case 2:
+                    Ability3 = (Ability)gameObject.AddComponent(newAbility);
+                    break;
+            }
+
             abilityNumber++;
+        }
+        else
+        {
+            switch(slot)
+            {
+                case 1:
+                    Ability1 = (Ability)gameObject.AddComponent(newAbility);
+                    break;
+                case 2:
+                    Ability2 = (Ability)gameObject.AddComponent(newAbility);
+                    break;
+                case 3:
+                    Ability3 = (Ability)gameObject.AddComponent(newAbility);
+                    break;
+            }
         }
     }
 
     private void GetInput()
     {
-        if(Input.GetButtonDown("Ability1"))
+        if(Input.GetButtonDown("Ability1") && Ability1 != null)
         {
             Ability1.Cast();
         }
 
-        if(Input.GetButtonDown("Ability2"))
+        if(Input.GetButtonDown("Ability2") && Ability2 != null)
         {
             Ability2.Cast();
         }
 
-        if(Input.GetButtonDown("Ability3"))
+        if(Input.GetButtonDown("Ability3") && Ability3 != null)
         {
             Ability3.Cast();
         }
