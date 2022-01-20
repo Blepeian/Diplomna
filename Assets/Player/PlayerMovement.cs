@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         jumping = false;
     }
 
-    public void Flip()
+    private void Flip()
     {
         lookingRight = !lookingRight;
 
