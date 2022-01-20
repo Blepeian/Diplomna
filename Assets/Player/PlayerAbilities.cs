@@ -47,12 +47,15 @@ public class PlayerAbilities : MonoBehaviour
             switch(slot)
             {
                 case 1:
+                    Destroy(Ability1);
                     Ability1 = (Ability)gameObject.AddComponent(newAbility);
                     break;
                 case 2:
+                    Destroy(Ability2);
                     Ability2 = (Ability)gameObject.AddComponent(newAbility);
                     break;
                 case 3:
+                    Destroy(Ability3);
                     Ability3 = (Ability)gameObject.AddComponent(newAbility);
                     break;
             }
