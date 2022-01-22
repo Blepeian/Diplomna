@@ -22,7 +22,7 @@ public class PlayerAbilities : MonoBehaviour
         Ability2 = (Ability)gameObject.AddComponent(newAbility);
         Ability2.castPoint = gameObject.transform;
 
-        newAbilityName = "LaserAttack";
+        newAbilityName = "GroundSlam";
         newAbility = System.Type.GetType(newAbilityName);
         Ability3 = (Ability)gameObject.AddComponent(newAbility);
         Ability3.castPoint = gameObject.transform;

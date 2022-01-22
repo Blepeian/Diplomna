@@ -18,7 +18,7 @@ public class LaserAttack : Ability
         remainingCooldown = 0;
         abilityName = "Death Ray";
         description = "Chant a spell from your necronomicon, firing a ray of death borrowed from the old gods' powers.";
-        damage = 0.1f;
+        damage = 0.05f;
         attackRange = 5f;
         enemyLayer = LayerMask.GetMask("Enemy");
         duration = 1.5f;

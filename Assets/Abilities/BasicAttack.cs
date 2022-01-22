@@ -14,7 +14,7 @@ public class BasicAttack : Ability
         remainingCooldown = 0;
         abilityName = "Stab";
         description = "Stab enemies with your dagger. Deals low damage but attacks fast.";
-        damage = 5;
+        damage = 25f;
         attackRange = 0.45f;
         enemyLayer = LayerMask.GetMask("Enemy");
         scriptName = "BasicAttack";
