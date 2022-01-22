@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    public int maxHealth;
-    public int currHealth;
+    public float maxHealth;
+    public float currHealth;
 
     private void Awake()
     {
         currHealth = maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
          currHealth -= damage;
         

@@ -9,10 +9,10 @@ public class PlayerMovement : MonoBehaviour
     public Transform feet;
     public LayerMask terrain;
     public float checkRadius;
+    public bool lookingRight = true;
 
 
     private Rigidbody2D body;
-    private bool lookingRight = true;
     private float direction;
     private bool jumping = false;
     private int remainingJumps;

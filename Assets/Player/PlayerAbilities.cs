@@ -16,6 +16,16 @@ public class PlayerAbilities : MonoBehaviour
         System.Type newAbility = System.Type.GetType(newAbilityName);
         Ability1 = (Ability)gameObject.AddComponent(newAbility);
         Ability1.castPoint = gameObject.transform;
+
+        newAbilityName = "LaserAttack";
+        newAbility = System.Type.GetType(newAbilityName);
+        Ability2 = (Ability)gameObject.AddComponent(newAbility);
+        Ability2.castPoint = gameObject.transform;
+
+        newAbilityName = "LaserAttack";
+        newAbility = System.Type.GetType(newAbilityName);
+        Ability3 = (Ability)gameObject.AddComponent(newAbility);
+        Ability3.castPoint = gameObject.transform;
     }
 
     void Update()
@@ -34,9 +44,11 @@ public class PlayerAbilities : MonoBehaviour
             {
                 case 1:
                     Ability2 = (Ability)gameObject.AddComponent(newAbility);
+                    Ability2.castPoint = gameObject.transform;
                     break;
                 case 2:
                     Ability3 = (Ability)gameObject.AddComponent(newAbility);
+                    Ability3.castPoint = gameObject.transform;
                     break;
             }
 
@@ -49,14 +61,17 @@ public class PlayerAbilities : MonoBehaviour
                 case 1:
                     Destroy(Ability1);
                     Ability1 = (Ability)gameObject.AddComponent(newAbility);
+                    Ability1.castPoint = gameObject.transform;
                     break;
                 case 2:
                     Destroy(Ability2);
                     Ability2 = (Ability)gameObject.AddComponent(newAbility);
+                    Ability2.castPoint = gameObject.transform;
                     break;
                 case 3:
                     Destroy(Ability3);
                     Ability3 = (Ability)gameObject.AddComponent(newAbility);
+                    Ability3.castPoint = gameObject.transform;
                     break;
             }
         }
@@ -66,17 +81,46 @@ public class PlayerAbilities : MonoBehaviour
     {
         if(Input.GetButtonDown("Ability1") && Ability1 != null)
         {
-            Ability1.Cast();
+            if(!CheckCasting())
+            {
+                Ability1.Cast();
+            }
         }
 
         if(Input.GetButtonDown("Ability2") && Ability2 != null)
         {
-            Ability2.Cast();
+            if(!CheckCasting())
+            {
+                Ability2.Cast();
+            }
         }
 
         if(Input.GetButtonDown("Ability3") && Ability3 != null)
         {
-            Ability3.Cast();
+            if(!CheckCasting())
+            {
+                Ability3.Cast();
+            }
+        }
+    }
+
+    private bool CheckCasting()
+    {
+        if(Ability1.isCasting)
+        {
+            return true;
+        }
+        else if(Ability2.isCasting)
+        {
+            return true;
+        }
+        else if(Ability3.isCasting)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

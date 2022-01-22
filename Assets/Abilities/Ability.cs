@@ -11,6 +11,7 @@ public abstract class Ability : MonoBehaviour
     public float cooldown;
     public float remainingCooldown;
     public Sprite icon;
+    public bool isCasting;
 
     [SerializeField] public LayerMask enemyLayer;
 
