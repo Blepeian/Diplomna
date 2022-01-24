@@ -8,12 +8,14 @@ public class GroundSlam : Ability
     public float attackRange;
     public Vector2 boxSize;
     public float knockback;
+    public static new string abilityName;
+    public static new string description;
+    public static new Sprite icon;
     
     private float damage;
 
-    void Start()
+    void Awake()
     {
-        direction = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().lookingRight;
         cooldown = 3f;
         remainingCooldown = 0;
         abilityName = "Deep Stomp";
@@ -71,15 +73,7 @@ public class GroundSlam : Ability
     private void OnDrawGizmosSelected()  //For debugging purposes
     {
         Gizmos.color = Color.red;
-        Vector2 start;
-        if(direction)
-        {
-            start = new Vector2(castPoint.position.x, castPoint.position.y);
-        }
-        else
-        {
-            start = new Vector2(castPoint.position.x, castPoint.position.y);
-        }
+        Vector2 start = new Vector2(castPoint.position.x, castPoint.position.y);
         Gizmos.DrawWireCube(start, boxSize);
     }
 }

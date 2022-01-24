@@ -16,16 +16,6 @@ public class PlayerAbilities : MonoBehaviour
         System.Type newAbility = System.Type.GetType(newAbilityName);
         Ability1 = (Ability)gameObject.AddComponent(newAbility);
         Ability1.castPoint = gameObject.transform;
-
-        newAbilityName = "LaserAttack";
-        newAbility = System.Type.GetType(newAbilityName);
-        Ability2 = (Ability)gameObject.AddComponent(newAbility);
-        Ability2.castPoint = gameObject.transform;
-
-        newAbilityName = "GroundSlam";
-        newAbility = System.Type.GetType(newAbilityName);
-        Ability3 = (Ability)gameObject.AddComponent(newAbility);
-        Ability3.castPoint = gameObject.transform;
     }
 
     void Update()
@@ -33,7 +23,7 @@ public class PlayerAbilities : MonoBehaviour
         GetInput();
     }
 
-    public void setAbility(int slot, Ability ability)
+    public void SetAbility(int slot, Ability ability)
     {
         string newAbilityName = ability.scriptName;
         System.Type newAbility = System.Type.GetType(newAbilityName);
@@ -110,17 +100,23 @@ public class PlayerAbilities : MonoBehaviour
         {
             return true;
         }
-        else if(Ability2.isCasting)
+        else if(Ability2 != null)
         {
-            return true;
+            if(Ability2.isCasting)
+            {
+                return true;
+            }
+            goto Next;
         }
-        else if(Ability3.isCasting)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        Next:
+            if(Ability3 != null)
+            {
+                if(Ability3.isCasting)
+                {
+                    return true;
+                }
+                goto Final;
+            }
+        Final: return false;
     }
 }

@@ -7,8 +7,11 @@ public class BasicAttack : Ability
     
     private float damage;
     public float attackRange;
+    public static new string abilityName;
+    public static new string description;
+    public static new Sprite icon;
 
-    private void Start()
+    private void Awake()
     {
         cooldown = 0.2f;
         remainingCooldown = 0;
@@ -18,6 +21,7 @@ public class BasicAttack : Ability
         attackRange = 0.45f;
         enemyLayer = LayerMask.GetMask("Enemy");
         scriptName = "BasicAttack";
+        icon = Resources.Load<Sprite>("Stab_Icon");
     }
 
     private void Update()
