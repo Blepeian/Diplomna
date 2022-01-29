@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int maxHealth;
-    public int currHealth;
+    public float maxHealth;
+    public float currHealth;
     public HealthBar healthBar;
 
     public bool isInvinsible;
@@ -36,7 +36,7 @@ public class PlayerStats : MonoBehaviour
         currHealth = maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         if(!isInvinsible)
         {
