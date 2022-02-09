@@ -68,10 +68,14 @@ public class LaserAttack : Ability
     {
         while(level < levelToGetTo)
         {
-            damage = 1.005f*damage;
-            if(attackRange < 8)
+            damage = 1.05f*damage;
+            if(attackRange < 8f)
             {
                 attackRange = 1.1f*attackRange;
+                if(attackRange > 8f)
+                {
+                    attackRange = 8f;
+                }
             }
             level++;
         }
