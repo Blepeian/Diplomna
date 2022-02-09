@@ -5,7 +5,7 @@ using UnityEngine;
 public class BasicAttack : Ability
 {
     
-    public float damage;
+    [SerializeField] private float damage;
     public float attackRange;
     public static new string abilityName;
     public static new string description;
