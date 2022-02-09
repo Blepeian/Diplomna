@@ -10,10 +10,14 @@ public class PlayerStats : MonoBehaviour
     public float totalIFrameTime;
     private float currIFrameTime;
 
+    public int level;
+    public int xp;
+    private int xpToLevelUp = 100;
+    public XpBar xpBar;
+
     private void Awake()
     {
         MaxHealth();
-        healthBar.SetMaxHealth(maxHealth);
         currIFrameTime = 0;
         isInvinsible = false;
     }
@@ -29,11 +33,17 @@ public class PlayerStats : MonoBehaviour
         {
             isInvinsible = false;
         }
+
+        if(xp >= xpToLevelUp)
+        {
+            LevelUp();
+        }
     }
 
     private void MaxHealth()
     {
         currHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     public void TakeDamage(float damage)
@@ -49,5 +59,21 @@ public class PlayerStats : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void AddXp(int xpToAdd)
+    {
+        xp += xpToAdd;
+        xpBar.AddXpToBar(xp);
+    }
+
+    private void LevelUp()
+    {
+        level++;
+        xpBar.LevelUp(level);
+        xp -= xpToLevelUp;
+        xpBar.AddXpToBar(xp);
+        maxHealth = 1.2f*maxHealth;
+        MaxHealth();
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BasicAttack : Ability
 {
     
-    private float damage;
+    [SerializeField] private float damage;
     public float attackRange;
     public static new string abilityName;
     public static new string description;
@@ -47,6 +47,15 @@ public class BasicAttack : Ability
             }
             remainingCooldown = cooldown;
             isCasting = false;
+        }
+    }
+
+    public override void LevelUp(int levelToGetTo)
+    {
+        while(level < levelToGetTo)
+        {
+            damage = 1.15f*damage;
+            level++;
         }
     }
 

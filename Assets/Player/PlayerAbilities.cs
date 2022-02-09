@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerAbilities : MonoBehaviour
 {
+    public int level;
     public int abilityNumber;
     public Ability Ability1 = null;
     public Ability Ability2 = null;
@@ -11,16 +12,22 @@ public class PlayerAbilities : MonoBehaviour
 
     private void Awake()
     {
+        level = GameObject.Find("Player").GetComponent<PlayerStats>().level;
         abilityNumber = 1;
         string newAbilityName = "BasicAttack";
         System.Type newAbility = System.Type.GetType(newAbilityName);
         Ability1 = (Ability)gameObject.AddComponent(newAbility);
         Ability1.castPoint = gameObject.transform;
+        Ability1.level = level;
     }
 
     void Update()
     {
         GetInput();
+        if(GameObject.Find("Player").GetComponent<PlayerStats>().level > level)
+        {
+            LevelUp();
+        }
     }
 
     public void SetAbility(int slot, Ability ability)
@@ -35,10 +42,12 @@ public class PlayerAbilities : MonoBehaviour
                 case 1:
                     Ability2 = (Ability)gameObject.AddComponent(newAbility);
                     Ability2.castPoint = gameObject.transform;
+                    Ability2.level = level;
                     break;
                 case 2:
                     Ability3 = (Ability)gameObject.AddComponent(newAbility);
                     Ability3.castPoint = gameObject.transform;
+                    Ability3.level = level;
                     break;
             }
 
@@ -52,16 +61,19 @@ public class PlayerAbilities : MonoBehaviour
                     Destroy(Ability1);
                     Ability1 = (Ability)gameObject.AddComponent(newAbility);
                     Ability1.castPoint = gameObject.transform;
+                    Ability1.level = level;
                     break;
                 case 2:
                     Destroy(Ability2);
                     Ability2 = (Ability)gameObject.AddComponent(newAbility);
                     Ability2.castPoint = gameObject.transform;
+                    Ability2.level = level;
                     break;
                 case 3:
                     Destroy(Ability3);
                     Ability3 = (Ability)gameObject.AddComponent(newAbility);
                     Ability3.castPoint = gameObject.transform;
+                    Ability3.level = level;
                     break;
             }
         }
@@ -100,7 +112,7 @@ public class PlayerAbilities : MonoBehaviour
         {
             return true;
         }
-        else if(Ability2 != null)
+        if(Ability2 != null)
         {
             if(Ability2.isCasting)
             {
@@ -109,14 +121,28 @@ public class PlayerAbilities : MonoBehaviour
             goto Next;
         }
         Next:
-            if(Ability3 != null)
+        if(Ability3 != null)
+        {
+            if(Ability3.isCasting)
             {
-                if(Ability3.isCasting)
-                {
-                    return true;
-                }
-                goto Final;
+                return true;
             }
+            goto Final;
+        }
         Final: return false;
+    }
+
+    private void LevelUp()
+    {
+        level++;
+        Ability1.LevelUp(level);
+        if(Ability2 != null)
+        {
+            Ability2.LevelUp(level);
+        }
+        if(Ability3 != null)
+        {
+            Ability3.LevelUp(level);
+        }
     }
 }

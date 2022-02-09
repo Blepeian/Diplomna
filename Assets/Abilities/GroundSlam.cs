@@ -42,7 +42,7 @@ public class GroundSlam : Ability
         if(remainingCooldown <= 0)
         {
             isCasting = true;
-            direction = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().lookingRight;
+            direction = GameObject.Find("Player").GetComponent<PlayerMovement>().lookingRight;
 
             RaycastHit2D[] hits;
 
@@ -70,10 +70,35 @@ public class GroundSlam : Ability
         }
     }
 
-    private void OnDrawGizmosSelected()  //For debugging purposes
+    public override void LevelUp(int levelToGetTo)
     {
-        Gizmos.color = Color.red;
-        Vector2 start = new Vector2(castPoint.position.x, castPoint.position.y);
-        Gizmos.DrawWireCube(start, boxSize);
+        while(level < levelToGetTo)
+        {
+            damage = 1.1f*damage;
+            if(attackRange < 5f)
+            {
+                attackRange = 1.1f*attackRange;
+                if(attackRange > 5f)
+                {
+                    attackRange = 5f;
+                }
+            }
+            if(knockback < 400f)
+            {
+                knockback = 1.3f*knockback;
+                if(knockback > 400f)
+                {
+                    knockback = 400f;
+                }
+            }
+            level++;
+        }
     }
+
+    // private void OnDrawGizmosSelected()  //For debugging purposes
+    // {
+    //     Gizmos.color = Color.red;
+    //     Vector2 start = new Vector2(castPoint.position.x, castPoint.position.y);
+    //     Gizmos.DrawWireCube(start, boxSize);
+    // }
 }
