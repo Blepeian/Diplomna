@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Ability : MonoBehaviour
 {
+    public int level;
     public string scriptName;
     public Transform castPoint;
     public string abilityName;
@@ -16,4 +17,6 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] public LayerMask enemyLayer;
 
     public abstract void Cast();
+
+    public abstract void LevelUp(int levelToGetTo);
 }

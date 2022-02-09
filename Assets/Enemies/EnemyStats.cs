@@ -36,5 +36,6 @@ public class EnemyStats : MonoBehaviour
     private void LevelUp()
     {
         maxHealth = 1.1f*maxHealth;
+        level = GameObject.Find("Player").GetComponent<PlayerStats>().level;
     }
 }

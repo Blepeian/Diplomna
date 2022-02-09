@@ -70,6 +70,11 @@ public class GroundSlam : Ability
         }
     }
 
+    public override void LevelUp(int levelToGetTo)
+    {
+        
+    }
+
     private void OnDrawGizmosSelected()  //For debugging purposes
     {
         Gizmos.color = Color.red;

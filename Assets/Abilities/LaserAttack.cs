@@ -64,6 +64,11 @@ public class LaserAttack : Ability
         }
     }
 
+    public override void LevelUp(int levelToGetTo)
+    {
+        
+    }
+
     private void Laser()
     {
         direction = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().lookingRight;
