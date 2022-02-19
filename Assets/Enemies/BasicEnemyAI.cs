@@ -63,7 +63,7 @@ public class BasicEnemyAI : MonoBehaviour
         
         if(state == enemyState.Attacking)
         {
-            if(Vector2.Distance(start, transform.position) <= maxFollowDistance)
+            if(Vector2.Distance(player.transform.position, transform.position) <= maxFollowDistance)
             {
                 if(Vector2.Distance(player.transform.position, transform.position) <= attackRange)
                 {
@@ -80,7 +80,7 @@ public class BasicEnemyAI : MonoBehaviour
                     lookingRight = false;
                 }
             }
-            else if(Vector2.Distance(start, transform.position) > maxFollowDistance)
+            else if(Vector2.Distance(player.transform.position, transform.position) > maxFollowDistance)
             {
                 transform.position = start;
                 state = enemyState.Idle;
