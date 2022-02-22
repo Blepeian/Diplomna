@@ -39,7 +39,6 @@ public class BasicAttack : Ability
         {
             isCasting = true;
             Collider2D[] hits = Physics2D.OverlapCircleAll(castPoint.position, attackRange, enemyLayer);
-            Debug.Log("Attacked " + hits.Length + " enemis");
 
             foreach(Collider2D enemy in hits)
             {
