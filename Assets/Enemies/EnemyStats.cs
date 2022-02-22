@@ -8,6 +8,7 @@ public class EnemyStats : MonoBehaviour
     public float currHealth;
     public int xpToGive;
     public int level;
+    public Ability enemyAttack;
 
     private void Awake()
     {
@@ -37,5 +38,6 @@ public class EnemyStats : MonoBehaviour
     {
         maxHealth = 1.1f*maxHealth;
         level = GameObject.Find("Player").GetComponent<PlayerStats>().level;
+        enemyAttack.LevelUp(level);
     }
 }

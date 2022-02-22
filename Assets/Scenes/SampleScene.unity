@@ -295,6 +295,7 @@ MonoBehaviour:
   currHealth: 1
   xpToGive: 1000
   level: 0
+  enemyAttack: {fileID: 157662688}
 --- !u!114 &157662688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,6 +370,7 @@ MonoBehaviour:
   currHealth: 1
   xpToGive: 10
   level: 0
+  enemyAttack: {fileID: 835584006}
 --- !u!61 &835584001
 BoxCollider2D:
   m_ObjectHideFlags: 0
