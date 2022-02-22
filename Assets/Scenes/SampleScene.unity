@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 157662686}
   - component: {fileID: 157662687}
   - component: {fileID: 157662684}
+  - component: {fileID: 157662688}
   m_Layer: 9
   m_Name: Test Dummy
   m_TagString: Enemy
@@ -236,6 +237,7 @@ MonoBehaviour:
   body: {fileID: 157662682}
   maxFollowDistance: 8
   returning: 0
+  enemyAttack: {fileID: 157662688}
   start: {x: 0, y: 0}
 --- !u!4 &157662685
 Transform:
@@ -293,6 +295,32 @@ MonoBehaviour:
   currHealth: 1
   xpToGive: 1000
   level: 0
+--- !u!114 &157662688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157662681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1090e0fc9aa93b3489ac026eb202f3f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  scriptName: 
+  castPoint: {fileID: 157662685}
+  abilityName: 
+  description: 
+  cooldown: 1.7
+  remainingCooldown: 0
+  icon: {fileID: 0}
+  isCasting: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  damage: 50
+  attackRange: 1.2
 --- !u!20 &519420031 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 4249930833611951097, guid: f7c009652c7d66744b8c856ce8944522, type: 3}
@@ -317,6 +345,7 @@ GameObject:
   - component: {fileID: 835584001}
   - component: {fileID: 835584000}
   - component: {fileID: 835584005}
+  - component: {fileID: 835584006}
   m_Layer: 9
   m_Name: small test dummy
   m_TagString: Enemy
@@ -468,11 +497,38 @@ MonoBehaviour:
   state: 0
   moveDistance: 2.5
   player: {fileID: 0}
-  attackRange: 2
+  attackRange: 1.5
   body: {fileID: 835584002}
   maxFollowDistance: 7
   returning: 0
+  enemyAttack: {fileID: 835584006}
   start: {x: 0, y: 0}
+--- !u!114 &835584006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835583999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1090e0fc9aa93b3489ac026eb202f3f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  scriptName: 
+  castPoint: {fileID: 835584004}
+  abilityName: 
+  description: 
+  cooldown: 1.4
+  remainingCooldown: 0
+  icon: {fileID: 0}
+  isCasting: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  damage: 25
+  attackRange: 0.8
 --- !u!1 &1014485633
 GameObject:
   m_ObjectHideFlags: 0

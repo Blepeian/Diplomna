@@ -18,6 +18,8 @@ public class BasicEnemyAI : MonoBehaviour
     public float maxFollowDistance;
     public bool returning = false;
 
+    public Ability enemyAttack;
+
     private float sightDistance;
     private bool lookingRight = true;
     private float velocity;
@@ -68,6 +70,7 @@ public class BasicEnemyAI : MonoBehaviour
                 if(Vector2.Distance(player.transform.position, transform.position) <= attackRange)
                 {
                     velocity = 0;
+                    enemyAttack.Cast();
                 }
                 else if(player.transform.position.x > transform.position.x)
                 {
