@@ -28,42 +28,27 @@ public class AbilityItem : Item
     private void PickAbility()
     {
         int abID = Random.Range(1, 4);
-        string newAbilityName;
-        System.Type newAbility;
 
         switch(abID){
             case 1:
-                newAbilityName = "BasicAttack";
-                newAbility = System.Type.GetType(newAbilityName);
-                gameObject.AddComponent(newAbility);
-                ability = (Ability)gameObject.GetComponent(newAbility);
-                itemName = BasicAttack.abilityName;
-                description = BasicAttack.description;
-                gameObject.GetComponent<SpriteRenderer>().sprite = BasicAttack.icon;
-                gameObject.GetComponent<SpriteRenderer>().size = gameObject.GetComponent<BoxCollider2D>().size;
+                BasicAttack basicAttack = (BasicAttack)gameObject.AddComponent(System.Type.GetType("BasicAttack"));
+                basicAttack.GetData(this);
+                ability = (Ability)basicAttack;
                 break;
             case 2:
-                newAbilityName = "LaserAttack";
-                newAbility = System.Type.GetType(newAbilityName);
-                gameObject.AddComponent(newAbility);
-                ability = (Ability)gameObject.GetComponent(newAbility);
-                itemName = LaserAttack.abilityName;
-                description = LaserAttack.description;
-                gameObject.GetComponent<SpriteRenderer>().sprite = LaserAttack.icon;
-                gameObject.GetComponent<SpriteRenderer>().size = gameObject.GetComponent<BoxCollider2D>().size;
+                LaserAttack laserAttack = (LaserAttack)gameObject.AddComponent(System.Type.GetType("LaserAttack"));
+                laserAttack.GetData(this);
+                ability = (Ability)laserAttack;
                 break;
             case 3:
-                newAbilityName = "GroundSlam";
-                newAbility = System.Type.GetType(newAbilityName);
-                gameObject.AddComponent(newAbility);
-                ability = (Ability)gameObject.GetComponent(newAbility);
-                itemName = GroundSlam.abilityName;
-                description = GroundSlam.description;
-                gameObject.GetComponent<SpriteRenderer>().sprite = GroundSlam.icon;
-                gameObject.GetComponent<SpriteRenderer>().size = gameObject.GetComponent<BoxCollider2D>().size;
+                GroundSlam grSlamAttack = (GroundSlam)gameObject.AddComponent(System.Type.GetType("GroundSlam"));
+                grSlamAttack.GetData(this);
+                ability = (Ability)grSlamAttack;
                 break;
             case 4:
                 break;
         }
+
+        gameObject.GetComponent<SpriteRenderer>().size = gameObject.GetComponent<BoxCollider2D>().size;
     }
 }

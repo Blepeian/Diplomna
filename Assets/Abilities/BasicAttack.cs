@@ -7,9 +7,6 @@ public class BasicAttack : Ability
     
     [SerializeField] private float damage;
     public float attackRange;
-    public static new string abilityName;
-    public static new string description;
-    public static new Sprite icon;
 
     private void Awake()
     {
@@ -48,7 +45,7 @@ public class BasicAttack : Ability
             isCasting = false;
         }
     }
-
+    
     public override void LevelUp(int levelToGetTo)
     {
         while(level < levelToGetTo)
@@ -57,7 +54,7 @@ public class BasicAttack : Ability
             level++;
         }
     }
-
+    
     // private void OnDrawGizmosSelected()  //For debugging purposes
     // {
     //     Gizmos.color = Color.red;

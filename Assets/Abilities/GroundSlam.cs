@@ -8,9 +8,6 @@ public class GroundSlam : Ability
     public float attackRange;
     public Vector2 boxSize;
     public float knockback;
-    public static new string abilityName;
-    public static new string description;
-    public static new Sprite icon;
     
     private float damage;
 

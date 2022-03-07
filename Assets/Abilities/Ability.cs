@@ -17,6 +17,12 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] public LayerMask enemyLayer;
 
     public abstract void Cast();
-
+    
     public abstract void LevelUp(int levelToGetTo);
-}
+
+    public virtual void GetData(AbilityItem item)
+    {
+        item.itemName = this.abilityName;
+        item.description = this.description;
+        item.gameObject.GetComponent<SpriteRenderer>().sprite = this.icon;
+    }
