@@ -26,3 +26,4 @@ public abstract class Ability : MonoBehaviour
         item.description = this.description;
         item.gameObject.GetComponent<SpriteRenderer>().sprite = this.icon;
     }
+}
