@@ -28,36 +28,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4180636179825545734}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2010675019746971376
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2010675019746971383}
-  m_Layer: 8
-  m_Name: Head
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2010675019746971383
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2010675019746971376}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0.23, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4180636179825545734}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2010675020076319844
@@ -89,7 +59,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4180636179825545734}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2010675020076319850
 MonoBehaviour:
@@ -139,7 +109,6 @@ Transform:
   m_LocalPosition: {x: -3.52, y: -2.53, z: 0}
   m_LocalScale: {x: 1.3104, y: 1.399, z: 1}
   m_Children:
-  - {fileID: 2010675019746971383}
   - {fileID: 2010675019701628838}
   - {fileID: 2010675020076319851}
   m_Father: {fileID: 0}
@@ -258,12 +227,13 @@ MonoBehaviour:
   moveSpeed: 3
   jumpForce: 400
   maxJumps: 1
-  head: {fileID: 2010675019746971383}
+  head: {fileID: 0}
   feet: {fileID: 2010675019701628838}
   terrain:
     serializedVersion: 2
     m_Bits: 64
   checkRadius: 1
+  lookingRight: 1
   grounded: 0
 --- !u!114 &2010675020904377710
 MonoBehaviour:
@@ -282,3 +252,6 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   isInvinsible: 0
   totalIFrameTime: 3
+  level: 0
+  xp: 0
+  xpBar: {fileID: 0}

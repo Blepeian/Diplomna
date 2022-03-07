@@ -5,7 +5,6 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     public int maxJumps;
-    public Transform head;
     public Transform feet;
     public LayerMask terrain;
     public float checkRadius;

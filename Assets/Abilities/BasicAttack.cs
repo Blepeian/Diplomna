@@ -5,7 +5,7 @@ using UnityEngine;
 public class BasicAttack : Ability
 {
     
-    private float damage;
+    [SerializeField] private float damage;
     public float attackRange;
 
     private void Awake()
@@ -36,7 +36,6 @@ public class BasicAttack : Ability
         {
             isCasting = true;
             Collider2D[] hits = Physics2D.OverlapCircleAll(castPoint.position, attackRange, enemyLayer);
-            Debug.Log("Attacked " + hits.Length + " enemis");
 
             foreach(Collider2D enemy in hits)
             {
@@ -46,9 +45,7 @@ public class BasicAttack : Ability
             isCasting = false;
         }
     }
-
-<<<<<<< Updated upstream
-=======
+    
     public override void LevelUp(int levelToGetTo)
     {
         while(level < levelToGetTo)
@@ -57,8 +54,7 @@ public class BasicAttack : Ability
             level++;
         }
     }
-
->>>>>>> Stashed changes
+    
     // private void OnDrawGizmosSelected()  //For debugging purposes
     // {
     //     Gizmos.color = Color.red;

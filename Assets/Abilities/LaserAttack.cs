@@ -9,7 +9,7 @@ public class LaserAttack : Ability
     public float duration;
     
     private float remainingDuration;
-    private float damage;
+    [SerializeField] private float damage;
 
     void Awake()
     {
@@ -18,7 +18,7 @@ public class LaserAttack : Ability
         abilityName = "Death Ray";
         description = "Chant a spell from your necronomicon, firing a ray of death borrowed from the old gods' powers.";
         damage = 0.05f;
-        attackRange = 5f;
+        attackRange = 4f;
         enemyLayer = LayerMask.GetMask("Enemy");
         duration = 1.5f;
         remainingDuration = 0;
@@ -58,6 +58,23 @@ public class LaserAttack : Ability
                 remainingDuration = duration;
                 Laser();
             }
+        }
+    }
+
+    public override void LevelUp(int levelToGetTo)
+    {
+        while(level < levelToGetTo)
+        {
+            damage = 1.05f*damage;
+            if(attackRange < 8f)
+            {
+                attackRange = 1.1f*attackRange;
+                if(attackRange > 8f)
+                {
+                    attackRange = 8f;
+                }
+            }
+            level++;
         }
     }
 
