@@ -7,9 +7,6 @@ public class LaserAttack : Ability
     public bool direction;
     public float attackRange;
     public float duration;
-    public static new string abilityName;
-    public static new string description;
-    public static new Sprite icon;
     
     private float remainingDuration;
     private float damage;

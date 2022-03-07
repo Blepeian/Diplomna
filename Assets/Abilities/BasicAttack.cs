@@ -7,9 +7,6 @@ public class BasicAttack : Ability
     
     private float damage;
     public float attackRange;
-    public static new string abilityName;
-    public static new string description;
-    public static new Sprite icon;
 
     private void Awake()
     {
@@ -50,6 +47,18 @@ public class BasicAttack : Ability
         }
     }
 
+<<<<<<< Updated upstream
+=======
+    public override void LevelUp(int levelToGetTo)
+    {
+        while(level < levelToGetTo)
+        {
+            damage = 1.15f*damage;
+            level++;
+        }
+    }
+
+>>>>>>> Stashed changes
     // private void OnDrawGizmosSelected()  //For debugging purposes
     // {
     //     Gizmos.color = Color.red;
