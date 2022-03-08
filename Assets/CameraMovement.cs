@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour
 
     void Start ()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        // player = GameObject.FindWithTag("Player").transform;
     }
     
     void LateUpdate () 

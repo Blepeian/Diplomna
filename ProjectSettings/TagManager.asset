@@ -7,6 +7,8 @@ TagManager:
   - Terrain
   - Trap
   - Enemy
+  - HealthBar
+  - XpBar
   layers:
   - Default
   - TransparentFX

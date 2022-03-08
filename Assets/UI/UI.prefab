@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 4715356338633672542}
   m_Layer: 5
   m_Name: XpBar
-  m_TagString: Untagged
+  m_TagString: XpBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -861,7 +861,7 @@ GameObject:
   - component: {fileID: 8188886696896081163}
   m_Layer: 5
   m_Name: HealthBar
-  m_TagString: Untagged
+  m_TagString: HealthBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

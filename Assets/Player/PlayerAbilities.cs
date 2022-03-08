@@ -9,6 +9,7 @@ public class PlayerAbilities : MonoBehaviour
     public Ability Ability1 = null;
     public Ability Ability2 = null;
     public Ability Ability3 = null;
+    public PlayerStats playerStats;
 
     private void Awake()
     {
@@ -19,12 +20,13 @@ public class PlayerAbilities : MonoBehaviour
         Ability1 = (Ability)gameObject.AddComponent(newAbility);
         Ability1.castPoint = gameObject.transform;
         Ability1.level = level;
+        playerStats = (PlayerStats)GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
     }
 
     void Update()
     {
         GetInput();
-        if(GameObject.Find("Player").GetComponent<PlayerStats>().level > level)
+        if(playerStats.level > level)
         {
             LevelUp();
         }

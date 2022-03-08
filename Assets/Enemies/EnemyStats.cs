@@ -9,6 +9,7 @@ public class EnemyStats : MonoBehaviour
     public int xpToGive;
     public int level;
     public Ability enemyAttack;
+    public PlayerStats playerStats = null;
 
     private void Awake()
     {
@@ -17,7 +18,11 @@ public class EnemyStats : MonoBehaviour
 
     private void Update()
     {
-        if(GameObject.Find("Player").GetComponent<PlayerStats>().level > level)
+        if(playerStats == null)
+        {
+            playerStats = (PlayerStats)GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+        }
+        if(playerStats.level > level)
         {
             LevelUp();
         }
@@ -30,14 +35,14 @@ public class EnemyStats : MonoBehaviour
         if (currHealth <= 0)
         {
             Destroy(gameObject);
-            GameObject.Find("Player").GetComponent<PlayerStats>().AddXp(xpToGive);
+            playerStats.AddXp(xpToGive);
         }
     }
 
     private void LevelUp()
     {
         maxHealth = 1.1f*maxHealth;
-        level = GameObject.Find("Player").GetComponent<PlayerStats>().level;
+        level = playerStats.level;
         enemyAttack.LevelUp(level);
     }
 }

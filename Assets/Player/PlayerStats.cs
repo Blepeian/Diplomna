@@ -13,18 +13,28 @@ public class PlayerStats : MonoBehaviour
     public int level;
     public int xp;
     private int xpToLevelUp = 100;
-    public XpBar xpBar;
+    public XpBar xpBar = null;
 
     private void Awake()
     {
         MaxHealth();
         currIFrameTime = 0;
         isInvinsible = false;
-        healthBar = (HealthBar)GameObject.Find("HealthBar").GetComponent<HealthBar>();
     }
 
     void Update()
     {
+        if(healthBar == null)
+        {
+            healthBar = (HealthBar)GameObject.FindWithTag("HealthBar").GetComponent<HealthBar>(); //don't know where problem is, will try to fix later on
+            Debug.Log(healthBar);
+        }
+
+        if(xpBar == null)
+        {
+            xpBar = (XpBar)GameObject.FindWithTag("XpBar").GetComponent<XpBar>();
+        }
+
         currIFrameTime -= Time.deltaTime;
         if(currIFrameTime >= 0)
         {       
