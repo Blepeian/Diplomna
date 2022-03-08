@@ -4,7 +4,7 @@ public class PlayerStats : MonoBehaviour
 {
     public float maxHealth;
     public float currHealth;
-    public HealthBar healthBar;
+    public HealthBar healthBar = null;
 
     public bool isInvinsible;
     public float totalIFrameTime;
@@ -20,6 +20,7 @@ public class PlayerStats : MonoBehaviour
         MaxHealth();
         currIFrameTime = 0;
         isInvinsible = false;
+        healthBar = (HealthBar)GameObject.Find("HealthBar").GetComponent<HealthBar>();
     }
 
     void Update()

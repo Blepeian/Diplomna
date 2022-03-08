@@ -12,7 +12,7 @@ public class PlayerAbilities : MonoBehaviour
 
     private void Awake()
     {
-        level = GameObject.Find("Player").GetComponent<PlayerStats>().level;
+        level = GameObject.FindWithTag("Player").GetComponent<PlayerStats>().level;
         abilityNumber = 1;
         string newAbilityName = "BasicAttack";
         System.Type newAbility = System.Type.GetType(newAbilityName);
