@@ -253,6 +253,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   isInvinsible: 0
   totalIFrameTime: 3
+  rend: {fileID: 0}
   level: 0
   xp: 0
   xpBar: {fileID: 0}

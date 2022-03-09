@@ -9,7 +9,8 @@ public class PlayerStats : MonoBehaviour
     public bool isInvinsible;
     public float totalIFrameTime;
     private float currIFrameTime;
-
+    
+    private SpriteRenderer rend;
     public int level;
     public int xp;
     private int xpToLevelUp = 100;
@@ -19,6 +20,7 @@ public class PlayerStats : MonoBehaviour
     {
         currIFrameTime = 0;
         isInvinsible = false;
+        rend = gameObject.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -41,6 +43,7 @@ public class PlayerStats : MonoBehaviour
         }
         else
         {
+            rend.color = new Color(255f, 255f, 255f );
             isInvinsible = false;
         }
 
@@ -60,6 +63,7 @@ public class PlayerStats : MonoBehaviour
     {
         if(!isInvinsible)
         {
+            rend.color = new Color(255f, 0f, 126f );
             currIFrameTime = totalIFrameTime;
             currHealth -= damage;
             healthBar.SetHealth(currHealth);

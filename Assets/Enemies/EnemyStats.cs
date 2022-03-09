@@ -11,9 +11,14 @@ public class EnemyStats : MonoBehaviour
     public Ability enemyAttack;
     public PlayerStats playerStats = null;
 
+    private SpriteRenderer rend;
+    private float hitColorTime;
+
     private void Awake()
     {
         currHealth = maxHealth;
+        rend = gameObject.GetComponent<SpriteRenderer>();
+        
     }
 
     private void Update()
@@ -26,12 +31,19 @@ public class EnemyStats : MonoBehaviour
         {
             LevelUp();
         }
+
+        hitColorTime -= Time.deltaTime;
+        if(hitColorTime <= 0)
+        {
+            rend.color = new Color(255f, 255f, 255f );
+        }
     }
 
     public void TakeDamage(float damage)
     {
-         currHealth -= damage;
-        
+        currHealth -= damage;
+        rend.color = new Color(255f, 0f, 126f );
+        hitColorTime = 0.5f;       
         if (currHealth <= 0)
         {
             Destroy(gameObject);
