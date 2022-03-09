@@ -15,9 +15,8 @@ public class PlayerStats : MonoBehaviour
     private int xpToLevelUp = 100;
     public XpBar xpBar = null;
 
-    private void Awake()
+    private void Start()
     {
-        MaxHealth();
         currIFrameTime = 0;
         isInvinsible = false;
     }
@@ -26,8 +25,8 @@ public class PlayerStats : MonoBehaviour
     {
         if(healthBar == null)
         {
-            healthBar = (HealthBar)GameObject.FindWithTag("HealthBar").GetComponent<HealthBar>(); //don't know where problem is, will try to fix later on
-            Debug.Log(healthBar);
+            healthBar = (HealthBar)GameObject.FindWithTag("HealthBar").GetComponent<HealthBar>();
+            MaxHealth();
         }
 
         if(xpBar == null)

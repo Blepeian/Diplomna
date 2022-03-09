@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422e45de0ca36eb4a8cc845406329dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 250
+  maxHealth: 150
   currHealth: 0
   xpToGive: 20
   level: 0
@@ -303,7 +303,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
-  damage: 4
+  damage: 6
   attackRange: 1.1
 --- !u!114 &654394812
 MonoBehaviour:
@@ -321,7 +321,7 @@ MonoBehaviour:
   state: 0
   moveDistance: 3
   playerTransform: {fileID: 0}
-  attackRange: 0
+  attackRange: 1.1
   body: {fileID: 654394809}
   maxFollowDistance: 6
   returning: 0
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ef7f2e47aabd5419e94843c51089bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 20
 --- !u!61 &677190892
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422e45de0ca36eb4a8cc845406329dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 250
+  maxHealth: 150
   currHealth: 0
   xpToGive: 20
   level: 0
@@ -626,7 +626,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
-  damage: 4
+  damage: 6
   attackRange: 1.1
 --- !u!114 &705340743
 MonoBehaviour:
@@ -644,7 +644,7 @@ MonoBehaviour:
   state: 0
   moveDistance: 3.5
   playerTransform: {fileID: 0}
-  attackRange: 0
+  attackRange: 1.1
   body: {fileID: 705340740}
   maxFollowDistance: 10
   returning: 0
@@ -746,6 +746,7 @@ Transform:
   - {fileID: 1466427204}
   - {fileID: 948699105}
   - {fileID: 677190894}
+  - {fileID: 1269412159}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -785,7 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ef7f2e47aabd5419e94843c51089bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 20
 --- !u!61 &948699103
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -959,7 +960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422e45de0ca36eb4a8cc845406329dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 500
+  maxHealth: 260
   currHealth: 0
   xpToGive: 50
   level: 0
@@ -990,7 +991,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   damage: 10
-  attackRange: 1.1
+  attackRange: 2
 --- !u!114 &1049070009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1007,7 +1008,7 @@ MonoBehaviour:
   state: 0
   moveDistance: 2
   playerTransform: {fileID: 0}
-  attackRange: 0
+  attackRange: 2
   body: {fileID: 1049070006}
   maxFollowDistance: 10
   returning: 0
@@ -1109,7 +1110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ef7f2e47aabd5419e94843c51089bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 20
 --- !u!61 &1077749924
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1334,6 +1335,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1269412159}
   - component: {fileID: 1269412158}
+  - component: {fileID: 1269412161}
+  - component: {fileID: 1269412160}
   m_Layer: 0
   m_Name: swinging-axe
   m_TagString: Untagged
@@ -1399,13 +1402,52 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269412157}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.52, y: 10.51, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -26.49604, y: 2.983605, z: 9.6510935}
   m_LocalScale: {x: 5.981166, y: 5.981166, z: 5.981166}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 825479558}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1269412160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269412157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c4a79fa4dc0c4140b13ae1f6ee57a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+--- !u!61 &1269412161
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269412157}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.3673124}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.6, y: 1}
+    newSize: {x: 0.6, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 0.2653752}
+  m_EdgeRadius: 0
 --- !u!1 &1401483548
 GameObject:
   m_ObjectHideFlags: 0
@@ -1499,7 +1541,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
-  damage: 4
+  damage: 6
   attackRange: 1.1
 --- !u!114 &1401483552
 MonoBehaviour:
@@ -1517,7 +1559,7 @@ MonoBehaviour:
   state: 0
   moveDistance: 3.5
   playerTransform: {fileID: 0}
-  attackRange: 0
+  attackRange: 1.1
   body: {fileID: 1401483550}
   maxFollowDistance: 10
   returning: 0
@@ -1600,7 +1642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422e45de0ca36eb4a8cc845406329dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 250
+  maxHealth: 150
   currHealth: 0
   xpToGive: 20
   level: 0
@@ -1637,7 +1679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ef7f2e47aabd5419e94843c51089bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 20
 --- !u!61 &1466427202
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52393,7 +52435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422e45de0ca36eb4a8cc845406329dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 250
+  maxHealth: 150
   currHealth: 0
   xpToGive: 20
   level: 0
@@ -52423,7 +52465,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
-  damage: 4
+  damage: 6
   attackRange: 1.1
 --- !u!114 &2014882645
 MonoBehaviour:
@@ -52441,7 +52483,7 @@ MonoBehaviour:
   state: 0
   moveDistance: 3.5
   playerTransform: {fileID: 0}
-  attackRange: 0
+  attackRange: 1.1
   body: {fileID: 2014882642}
   maxFollowDistance: 10
   returning: 0

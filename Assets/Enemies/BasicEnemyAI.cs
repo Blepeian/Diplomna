@@ -30,7 +30,6 @@ public class BasicEnemyAI : MonoBehaviour
     {
         start = transform.position;
         state = enemyState.Idle;
-        // playerTransform = GameObject.Find("Player(Clone)").transform;
         body = gameObject.GetComponent<Rigidbody2D>();
         playerLayer = LayerMask.GetMask("Player");
         velocity = -moveSpeed;
@@ -39,7 +38,12 @@ public class BasicEnemyAI : MonoBehaviour
 
     void Update()
     {
-        if(Vector2.Distance(transform.position, GameObject.Find("Player(Clone)").transform.position) <= sightDistance)
+        if(playerTransform == null)
+        {
+            playerTransform = GameObject.Find("Player").transform;
+        }
+
+        if(Vector2.Distance(playerTransform.position, transform.position) <= sightDistance)
         {
             state = enemyState.Attacking;
         }
@@ -65,25 +69,25 @@ public class BasicEnemyAI : MonoBehaviour
         
         if(state == enemyState.Attacking)
         {
-            if(Vector2.Distance(GameObject.Find("Player(Clone)").transform.position, transform.position) <= maxFollowDistance)
+            if(Vector2.Distance(playerTransform.position, transform.position) <= maxFollowDistance)
             {
-                if(Vector2.Distance(GameObject.Find("Player(Clone)").transform.position, transform.position) <= attackRange)
+                if(Vector2.Distance(playerTransform.position, transform.position) <= attackRange)
                 {
                     velocity = 0;
                     enemyAttack.Cast();
                 }
-                else if(GameObject.Find("Player(Clone)").transform.position.x > transform.position.x)
+                else if(playerTransform.position.x > transform.position.x)
                 {
                     velocity = moveSpeed;
                     lookingRight = true;
                 }
-                else if(GameObject.Find("Player(Clone)").transform.position.x < transform.position.x)
+                else if(playerTransform.position.x < transform.position.x)
                 {
                     velocity =  -moveSpeed;
                     lookingRight = false;
                 }
             }
-            else if(Vector2.Distance(GameObject.Find("Player(Clone)").transform.position, transform.position) > maxFollowDistance)
+            else if(Vector2.Distance(playerTransform.position, transform.position) > maxFollowDistance)
             {
                 transform.position = start;
                 state = enemyState.Idle;

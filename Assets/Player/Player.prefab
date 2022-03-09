@@ -73,10 +73,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bc1fbae3a037741bc10d00fa406f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
   abilityNumber: 0
   Ability1: {fileID: 0}
   Ability2: {fileID: 0}
   Ability3: {fileID: 0}
+  playerStats: {fileID: 0}
 --- !u!1 &4631457964746016438
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +229,6 @@ MonoBehaviour:
   moveSpeed: 3
   jumpForce: 400
   maxJumps: 1
-  head: {fileID: 0}
   feet: {fileID: 2010675019701628838}
   terrain:
     serializedVersion: 2
@@ -247,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd4787f8ff9c9574382ef6e8e06d949c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 250
   currHealth: 0
   healthBar: {fileID: 0}
   isInvinsible: 0
