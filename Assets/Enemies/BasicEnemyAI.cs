@@ -93,7 +93,11 @@ public class BasicEnemyAI : MonoBehaviour
                 state = enemyState.Idle;
             }
 
-            if(velocity > 0)
+
+            body.velocity = new Vector2(velocity, body.velocity.y);
+        }
+
+        if(velocity > 0)
             {
                 transform.localRotation = Quaternion.Euler(0, 180, 0);
             }
@@ -101,8 +105,5 @@ public class BasicEnemyAI : MonoBehaviour
             {
                 transform.localRotation = Quaternion.Euler(0, 0, 0);
             }
-
-            body.velocity = new Vector2(velocity, body.velocity.y);
-        }
     }
 }
