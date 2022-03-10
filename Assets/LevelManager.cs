@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level_1_Manager : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
     public GameObject playerPrefab;
     public GameObject UIPrefab;
     public Camera mainCamera;
+    public AbilitySelectUI abUI;
 
     private void Start()
     {
@@ -16,6 +17,7 @@ public class Level_1_Manager : MonoBehaviour
         ui.GetComponent<Canvas>().worldCamera = mainCamera;
         mainCamera.GetComponent<CameraMovement>().player = player.transform;
         player.name = "Player";
+        ui.name = "UI";
         player.GetComponent<PlayerStats>().enabled = true;
     }
 }

@@ -5,24 +5,44 @@ using UnityEngine;
 public class AbilityItem : Item
 {
     public Ability ability = null;
+    public AbilitySelectUI ui = null;
+    public GameObject interact;
 
-    void Awake()
+    private bool playerInFront;
+
+    private void Awake()
     {
         PickAbility();
+        interact.SetActive(false);
+        playerInFront = false;
+
+        ui = (AbilitySelectUI)GameObject.Find("LevelManager").GetComponentInChildren<LevelManager>().abUI;
     }
 
-    void OnTriggerStay2D(Collider2D collision)
+    private void Update()
+    {
+        if(playerInFront)
+        {
+            if(Input.GetButtonDown("Interact"))
+            {
+                ui.GetAbility(this);
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            PlayerAbilities pAbilities = collision.gameObject.GetComponentInChildren(typeof(PlayerAbilities)) as PlayerAbilities;
-            if(Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                Debug.Log("Picking Up " + ability.abilityName);
-                Debug.Log("Choosing slot 1");
-                pAbilities.SetAbility(1, ability);
-            }
+            interact.SetActive(true);
+            playerInFront = true;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        interact.SetActive(false);
+        playerInFront = false;
     }
 
     private void PickAbility()

@@ -37,47 +37,26 @@ public class PlayerAbilities : MonoBehaviour
         string newAbilityName = ability.scriptName;
         System.Type newAbility = System.Type.GetType(newAbilityName);
 
-        if(abilityNumber < 3)
+        switch(slot)
         {
-            switch(abilityNumber)
-            {
-                case 1:
-                    Ability2 = (Ability)gameObject.AddComponent(newAbility);
-                    Ability2.castPoint = gameObject.transform;
-                    Ability2.level = level;
-                    break;
-                case 2:
-                    Ability3 = (Ability)gameObject.AddComponent(newAbility);
-                    Ability3.castPoint = gameObject.transform;
-                    Ability3.level = level;
-                    break;
-            }
-
-            abilityNumber++;
-        }
-        else
-        {
-            switch(slot)
-            {
-                case 1:
-                    Destroy(Ability1);
-                    Ability1 = (Ability)gameObject.AddComponent(newAbility);
-                    Ability1.castPoint = gameObject.transform;
-                    Ability1.level = level;
-                    break;
-                case 2:
-                    Destroy(Ability2);
-                    Ability2 = (Ability)gameObject.AddComponent(newAbility);
-                    Ability2.castPoint = gameObject.transform;
-                    Ability2.level = level;
-                    break;
-                case 3:
-                    Destroy(Ability3);
-                    Ability3 = (Ability)gameObject.AddComponent(newAbility);
-                    Ability3.castPoint = gameObject.transform;
-                    Ability3.level = level;
-                    break;
-            }
+            case 1:
+                Destroy(Ability1);
+                Ability1 = (Ability)gameObject.AddComponent(newAbility);
+                Ability1.castPoint = gameObject.transform;
+                Ability1.level = level;
+                break;
+            case 2:
+                Destroy(Ability2);
+                Ability2 = (Ability)gameObject.AddComponent(newAbility);
+                Ability2.castPoint = gameObject.transform;
+                Ability2.level = level;
+                break;
+            case 3:
+                Destroy(Ability3);
+                Ability3 = (Ability)gameObject.AddComponent(newAbility);
+                Ability3.castPoint = gameObject.transform;
+                Ability3.level = level;
+                break;
         }
     }
 

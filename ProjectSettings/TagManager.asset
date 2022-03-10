@@ -10,6 +10,7 @@ TagManager:
   - HealthBar
   - XpBar
   - Chest
+  - AbilitySelect
   layers:
   - Default
   - TransparentFX
