@@ -24,6 +24,7 @@ public class LaserAttack : Ability
         remainingDuration = 0;
         scriptName = "LaserAttack";
         isCasting = false;
+        icon = Resources.Load<Sprite>("LasAtt_placeholder");
     }
 
     void Update()

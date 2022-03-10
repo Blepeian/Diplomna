@@ -24,6 +24,7 @@ public class GroundSlam : Ability
         scriptName = "GroundSlam";
         knockback = 200f;
         isCasting = false;
+        icon = Resources.Load<Sprite>("GrSlam_placeholder");
     }
 
     void Update()

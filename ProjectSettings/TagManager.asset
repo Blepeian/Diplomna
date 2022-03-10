@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - HealthBar
   - XpBar
+  - Chest
   layers:
   - Default
   - TransparentFX
