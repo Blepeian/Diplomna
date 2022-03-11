@@ -335,7 +335,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Slot 3
+  m_Text: Press 3 For Slot 3
 --- !u!1 &3956426749268693678
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +395,6 @@ MonoBehaviour:
   abName: {fileID: 7428351083497955179}
   abIcon: {fileID: 2610837875649031764}
   abDescription: {fileID: 7830834423019734208}
-  ability: {fileID: 0}
 --- !u!1 &4272558429477915119
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +473,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Slot 2
+  m_Text: Press 2 For Slot 2
 --- !u!1 &4715356337012545277
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,16 +851,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6134469018421579496}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.002095311, y: 0.002095311, z: 0.002095311}
+  m_LocalScale: {x: 0.002095311, y: 0.0020953112, z: 0.002095311}
   m_Children: []
   m_Father: {fileID: 407779020564650326}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.54, y: -3.06}
+  m_AnchoredPosition: {x: -3.54, y: -3.0600002}
   m_SizeDelta: {x: 983.3062, y: 353.2239}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8055634461219262659
@@ -905,7 +904,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Slot 1
+  m_Text: Press 1 For Slot 1
 --- !u!1 &6215371286793096089
 GameObject:
   m_ObjectHideFlags: 0

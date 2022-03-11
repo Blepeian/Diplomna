@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  jumpForce: 400
+  jumpForce: 350
   maxJumps: 1
   feet: {fileID: 2010675019701628838}
   terrain:
@@ -253,7 +253,6 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   isInvinsible: 0
   totalIFrameTime: 3
-  rend: {fileID: 0}
   level: 0
   xp: 0
   xpBar: {fileID: 0}
