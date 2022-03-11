@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 654394809}
   - component: {fileID: 654394808}
   m_Layer: 9
-  m_Name: Lizard_3
+  m_Name: Lizard3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 677190891}
   m_Layer: 0
   m_Name: upper spikes right
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -467,7 +467,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.34743452}
+  m_Offset: {x: 0, y: -0.4330902}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -478,7 +478,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 0.30513096}
+  m_Size: {x: 4, y: 0.13381958}
   m_EdgeRadius: 0
 --- !u!212 &677190893
 SpriteRenderer:
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 705340740}
   - component: {fileID: 705340739}
   m_Layer: 9
-  m_Name: Lizard_5
+  m_Name: Lizard4
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -672,7 +672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2.6
   state: 0
-  moveDistance: 1
+  moveDistance: 0.5
   playerTransform: {fileID: 0}
   attackRange: 1.1
   body: {fileID: 705340740}
@@ -927,7 +927,7 @@ GameObject:
   - component: {fileID: 948699102}
   m_Layer: 0
   m_Name: upper spikes left
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -958,7 +958,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.34743452}
+  m_Offset: {x: 0, y: -0.42166996}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -969,7 +969,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 0.30513096}
+  m_Size: {x: 4, y: 0.15666008}
   m_EdgeRadius: 0
 --- !u!212 &948699104
 SpriteRenderer:
@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 1049070006}
   - component: {fileID: 1049070005}
   m_Layer: 9
-  m_Name: Big_Lizard
+  m_Name: BigLizard
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1281,7 +1281,7 @@ GameObject:
   - component: {fileID: 1077749923}
   m_Layer: 0
   m_Name: spikes bottom right
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1312,7 +1312,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.34743452}
+  m_Offset: {x: 0, y: -0.4330902}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1323,7 +1323,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 0.30513096}
+  m_Size: {x: 4, y: 0.13381958}
   m_EdgeRadius: 0
 --- !u!212 &1077749925
 SpriteRenderer:
@@ -1449,7 +1449,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.34743452}
+  m_Offset: {x: 0, y: -0.4159584}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1460,7 +1460,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 0.30513096}
+  m_Size: {x: 4, y: 0.16808319}
   m_EdgeRadius: 0
 --- !u!212 &1110351930
 SpriteRenderer:
@@ -1656,7 +1656,7 @@ GameObject:
   - component: {fileID: 1401483550}
   - component: {fileID: 1401483549}
   m_Layer: 9
-  m_Name: Lizard_1
+  m_Name: Lizard1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1854,7 +1854,7 @@ GameObject:
   - component: {fileID: 1466427201}
   m_Layer: 0
   m_Name: upper spikes middle
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1885,7 +1885,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.34743452}
+  m_Offset: {x: 0, y: -0.42166996}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1896,7 +1896,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 0.30513096}
+  m_Size: {x: 4, y: 0.15666008}
   m_EdgeRadius: 0
 --- !u!212 &1466427203
 SpriteRenderer:
@@ -52516,7 +52516,7 @@ GameObject:
   - component: {fileID: 2014882642}
   - component: {fileID: 2014882641}
   m_Layer: 9
-  m_Name: Lizard_2
+  m_Name: Lizard2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -15,7 +15,7 @@ public class GroundSlam : Ability
     {
         cooldown = 3f;
         remainingCooldown = 0;
-        abilityName = "Deep Stomp";
+        abilityName = "Stomp";
         description = "Call on the old ones' strength and stomp the ground, sending enemies flying upwards for a short time.";
         damage = 50f;
         attackRange = 2.5f;
@@ -24,7 +24,7 @@ public class GroundSlam : Ability
         scriptName = "GroundSlam";
         knockback = 200f;
         isCasting = false;
-        icon = Resources.Load<Sprite>("GrSlam_placeholder");
+        icon = Resources.Load<Sprite>("stomp_icon");
     }
 
     void Update()
