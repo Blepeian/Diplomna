@@ -233,7 +233,7 @@ MonoBehaviour:
   terrain:
     serializedVersion: 2
     m_Bits: 64
-  checkRadius: 1
+  checkRadius: 0.2
   lookingRight: 1
   grounded: 0
 --- !u!114 &2010675020904377710
