@@ -11,6 +11,10 @@ public class PlayerAbilities : MonoBehaviour
     public Ability Ability3 = null;
     public PlayerStats playerStats;
 
+    private AbilityUI ui1;
+    private AbilityUI ui2;
+    private AbilityUI ui3;
+
     private void Awake()
     {
         level = GameObject.FindWithTag("Player").GetComponent<PlayerStats>().level;
@@ -21,6 +25,12 @@ public class PlayerAbilities : MonoBehaviour
         Ability1.castPoint = gameObject.transform;
         Ability1.level = level;
         playerStats = (PlayerStats)GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+
+        ui1 = (AbilityUI)GameObject.FindWithTag("AbilityUI1").GetComponent<AbilityUI>();
+        ui2 = (AbilityUI)GameObject.FindWithTag("AbilityUI2").GetComponent<AbilityUI>();
+        ui3 = (AbilityUI)GameObject.FindWithTag("AbilityUI3").GetComponent<AbilityUI>();
+
+        Ability1.GetDataForUI(ui1);
     }
 
     void Update()
@@ -44,18 +54,21 @@ public class PlayerAbilities : MonoBehaviour
                 Ability1 = (Ability)gameObject.AddComponent(newAbility);
                 Ability1.castPoint = gameObject.transform;
                 Ability1.level = level;
+                Ability1.GetDataForUI(ui1);
                 break;
             case 2:
                 Destroy(Ability2);
                 Ability2 = (Ability)gameObject.AddComponent(newAbility);
                 Ability2.castPoint = gameObject.transform;
                 Ability2.level = level;
+                Ability2.GetDataForUI(ui2);
                 break;
             case 3:
                 Destroy(Ability3);
                 Ability3 = (Ability)gameObject.AddComponent(newAbility);
                 Ability3.castPoint = gameObject.transform;
                 Ability3.level = level;
+                Ability3.GetDataForUI(ui3);
                 break;
         }
     }
@@ -67,6 +80,7 @@ public class PlayerAbilities : MonoBehaviour
             if(!CheckCasting())
             {
                 Ability1.Cast();
+                ui1.StartCooldown();
             }
         }
 
@@ -75,6 +89,7 @@ public class PlayerAbilities : MonoBehaviour
             if(!CheckCasting())
             {
                 Ability2.Cast();
+                ui2.StartCooldown();
             }
         }
 
@@ -83,6 +98,7 @@ public class PlayerAbilities : MonoBehaviour
             if(!CheckCasting())
             {
                 Ability3.Cast();
+                ui3.StartCooldown();
             }
         }
     }

@@ -11,6 +11,9 @@ TagManager:
   - XpBar
   - Chest
   - AbilitySelect
+  - AbilityUI1
+  - AbilityUI2
+  - AbilityUI3
   layers:
   - Default
   - TransparentFX
