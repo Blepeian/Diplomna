@@ -17,6 +17,7 @@ public class BasicEnemyAI : MonoBehaviour
     public Rigidbody2D body;
     public float maxFollowDistance;
     public bool returning = false;
+    public Transform eyes;
 
     public Ability enemyAttack;
 
@@ -24,14 +25,13 @@ public class BasicEnemyAI : MonoBehaviour
     private bool lookingRight = true;
     private float velocity;
     [SerializeField] private Vector2 start;
-    private LayerMask playerLayer;
+    private RaycastHit2D[] seenObjs;
     
     void Start()
     {
         start = transform.position;
         state = enemyState.Idle;
         body = gameObject.GetComponent<Rigidbody2D>();
-        playerLayer = LayerMask.GetMask("Player");
         velocity = -moveSpeed;
         sightDistance = attackRange * 2;
     }
@@ -43,9 +43,21 @@ public class BasicEnemyAI : MonoBehaviour
             playerTransform = GameObject.Find("Player").transform;
         }
 
-        if(Vector2.Distance(playerTransform.position, transform.position) <= sightDistance)
+        if(lookingRight)
         {
-            state = enemyState.Attacking;
+            seenObjs = Physics2D.RaycastAll(eyes.position, Vector2.right, sightDistance);
+        }
+        else
+        {
+            seenObjs = Physics2D.RaycastAll(eyes.position, Vector2.left, sightDistance);
+        }
+
+        foreach(RaycastHit2D obj in seenObjs)
+        {
+            if(obj.collider.gameObject.tag == "Player")
+            {
+                state = enemyState.Attacking;
+            }
         }
 
         if(state == enemyState.Idle)
