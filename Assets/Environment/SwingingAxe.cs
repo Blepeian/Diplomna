@@ -30,9 +30,7 @@ public class SwingingAxe : MonoBehaviour
     {
         if(col.gameObject.CompareTag("Player"))
         {
-            if (!col.gameObject.GetComponent<PlayerStats>().isInvinsible) {
-                col.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
-            }
+            col.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
         }
     }
 }

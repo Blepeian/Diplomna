@@ -235,7 +235,8 @@ MonoBehaviour:
     m_Bits: 64
   checkRadius: 0.25
   lookingRight: 1
-  grounded: 0
+  dodgingSpeed: 30
+  dodgeCooldown: 1
 --- !u!114 &2010675020904377710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +252,7 @@ MonoBehaviour:
   maxHealth: 250
   currHealth: 0
   healthBar: {fileID: 0}
-  isInvinsible: 0
+  isInvincible: 0
   totalIFrameTime: 3
   level: 0
   xp: 0

@@ -10,9 +10,7 @@ public class TrapScript : MonoBehaviour
     {
         if(collision.collider.gameObject.CompareTag("Player"))
         {
-            if (!collision.collider.gameObject.GetComponent<PlayerStats>().isInvinsible) {
-                collision.collider.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
-            }
+            collision.collider.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
         }
     }
 }

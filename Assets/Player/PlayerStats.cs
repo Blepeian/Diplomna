@@ -6,7 +6,7 @@ public class PlayerStats : MonoBehaviour
     public float currHealth;
     public HealthBar healthBar = null;
 
-    public bool isInvinsible;
+    public bool isInvincible;
     public float totalIFrameTime;
     private float currIFrameTime;
     
@@ -19,7 +19,7 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         currIFrameTime = 0;
-        isInvinsible = false;
+        isInvincible = false;
         rend = gameObject.GetComponent<SpriteRenderer>();
     }
 
@@ -39,12 +39,12 @@ public class PlayerStats : MonoBehaviour
         currIFrameTime -= Time.deltaTime;
         if(currIFrameTime >= 0)
         {       
-            isInvinsible = true;
+            isInvincible = true;
         }
         else
         {
             rend.color = new Color(255f, 255f, 255f );
-            isInvinsible = false;
+            isInvincible = false;
         }
 
         if(xp >= xpToLevelUp)
@@ -61,7 +61,7 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if(!isInvinsible)
+        if(!isInvincible)
         {
             rend.color = new Color(255f, 0f, 126f );
             currIFrameTime = totalIFrameTime;
