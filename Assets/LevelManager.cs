@@ -9,13 +9,34 @@ public class LevelManager : MonoBehaviour
     public Camera mainCamera;
     public AbilitySelectUI abUI;
 
+    public GameObject ui = null;
+    public GameObject player = null;
+
+    private void Awake()
+    {
+        Initialize();
+    }
+
     private void Start()
     {
-        GameObject ui = Instantiate(UIPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-        GameObject player = Instantiate(playerPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        Initialize();
+    }
+
+    public void Initialize()
+    {
+        if(ui == null)
+        {
+            ui = Instantiate(UIPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        }
+
+        if(player == null)
+        {
+            player = Instantiate(playerPrefab, new Vector3(64, 18, 0), Quaternion.identity);
+        }
+
         mainCamera = Camera.main;
         ui.GetComponent<Canvas>().worldCamera = mainCamera;
-        mainCamera.GetComponent<CameraMovement>().player = player.transform;
+        // mainCamera.GetComponent<CameraMovement>().player = player.transform;
         player.name = "Player";
         ui.name = "UI";
         player.GetComponent<PlayerStats>().enabled = true;
