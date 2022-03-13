@@ -31,12 +31,11 @@ public class LevelManager : MonoBehaviour
 
         if(player == null)
         {
-            player = Instantiate(playerPrefab, new Vector3(64, 18, 0), Quaternion.identity);
+            player = Instantiate(playerPrefab, new Vector3(0, 0, 0), Quaternion.identity);
         }
 
         mainCamera = Camera.main;
         ui.GetComponent<Canvas>().worldCamera = mainCamera;
-        // mainCamera.GetComponent<CameraMovement>().player = player.transform;
         player.name = "Player";
         ui.name = "UI";
         player.GetComponent<PlayerStats>().enabled = true;

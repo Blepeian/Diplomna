@@ -16,7 +16,7 @@ public class Level1Door : MonoBehaviour
         DontDestroyOnLoad(manager.gameObject);
         DontDestroyOnLoad(manager.player.gameObject);
         DontDestroyOnLoad(manager.ui.gameObject);
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("level2");
         manager.player.transform.position = new Vector3(0,0,0);
     }
 }
