@@ -18,11 +18,11 @@ public class BasicEnemyAI : MonoBehaviour
     public float maxFollowDistance;
     public bool returning = false;
     public Transform eyes;
+    public bool lookingRight = true;
 
     public Ability enemyAttack;
 
     private float sightDistance;
-    private bool lookingRight = true;
     private float velocity;
     [SerializeField] private Vector2 start;
     private RaycastHit2D[] seenObjs;
@@ -43,6 +43,11 @@ public class BasicEnemyAI : MonoBehaviour
             playerTransform = GameObject.Find("Player").transform;
         }
 
+        ControlEnemy();
+    }
+
+    private void ControlEnemy()
+    {
         if(lookingRight)
         {
             seenObjs = Physics2D.RaycastAll(eyes.position, Vector2.right, sightDistance);
@@ -110,12 +115,12 @@ public class BasicEnemyAI : MonoBehaviour
         }
 
         if(velocity > 0)
-            {
-                transform.localRotation = Quaternion.Euler(0, 180, 0);
-            }
-            else if(velocity < 0)
-            {
-                transform.localRotation = Quaternion.Euler(0, 0, 0);
-            }
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+        else if(velocity < 0)
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 }

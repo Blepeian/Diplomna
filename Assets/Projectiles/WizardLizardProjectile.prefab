@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5341897873667448905
+--- !u!1 &8593015757264655071
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7287310611625680524}
-  - component: {fileID: 1300617402356241376}
-  - component: {fileID: 7850762737468333404}
-  - component: {fileID: 1773554527020396524}
-  - component: {fileID: 2887465193468012329}
-  m_Layer: 13
-  m_Name: TurretProjectile
+  - component: {fileID: 2132226329457895999}
+  - component: {fileID: 8436079105367163062}
+  - component: {fileID: 4648595725374816287}
+  - component: {fileID: 8462330513708584794}
+  - component: {fileID: 6557098972207753810}
+  m_Layer: 14
+  m_Name: WizardLizardProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7287310611625680524
+--- !u!4 &2132226329457895999
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5341897873667448905}
+  m_GameObject: {fileID: 8593015757264655071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1300617402356241376
+--- !u!212 &8436079105367163062
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5341897873667448905}
+  m_GameObject: {fileID: 8593015757264655071}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3cbf2737459011f418f84c7babee0979, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.12753439, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,31 +85,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7850762737468333404
+--- !u!114 &4648595725374816287
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5341897873667448905}
+  m_GameObject: {fileID: 8593015757264655071}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4152a21c1c659eb4b8a83d00a1867a23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  projectileName: TurretFireball
+  damage: 15
+  projectileName: WizLizShot
   flightSpeed: 7
-  body: {fileID: 2887465193468012329}
+  body: {fileID: 8462330513708584794}
   spriteDirection: 0
   flightDirection: {x: 0, y: 0}
---- !u!60 &1773554527020396524
+--- !u!50 &8462330513708584794
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8593015757264655071}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!60 &6557098972207753810
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5341897873667448905}
+  m_GameObject: {fileID: 8593015757264655071}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -128,41 +149,20 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.06685357, y: -0.051260613}
-      - {x: -0.03087832, y: -0.07352884}
-      - {x: -0.01471699, y: -0.084204845}
-      - {x: -0.004067421, y: -0.08984598}
-      - {x: 0.0243906, y: -0.102619134}
-      - {x: 0.09185139, y: -0.10400902}
-      - {x: 0.11799532, y: -0.081354}
-      - {x: 0.15112822, y: -0.04133232}
-      - {x: 0.14999999, y: 0.046973437}
-      - {x: 0.09265234, y: 0.1015244}
-      - {x: 0.024932332, y: 0.098363124}
-      - {x: -0.043998964, y: 0.07056239}
-      - {x: -0.086588725, y: 0.04713898}
-      - {x: -0.14149942, y: 0.010495823}
-      - {x: -0.1519402, y: 0.0026826523}
-      - {x: -0.13675444, y: -0.013834801}
-      - {x: -0.11840971, y: -0.026307285}
---- !u!50 &2887465193468012329
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5341897873667448905}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+    - - {x: -0.07442374, y: -0.050182432}
+      - {x: -0.027974028, y: -0.072890826}
+      - {x: 0.01719863, y: -0.100863345}
+      - {x: 0.09241742, y: -0.09852274}
+      - {x: 0.1275528, y: -0.06546588}
+      - {x: 0.15271637, y: -0.043224413}
+      - {x: 0.1521583, y: 0.04399853}
+      - {x: 0.12496276, y: 0.072372705}
+      - {x: 0.09266811, y: 0.10087127}
+      - {x: 0.024601564, y: 0.099162415}
+      - {x: -0.017657816, y: 0.0771429}
+      - {x: -0.04841618, y: 0.06460253}
+      - {x: -0.07033361, y: 0.051728137}
+      - {x: -0.112875834, y: 0.032012478}
+      - {x: -0.13904722, y: 0.02152022}
+      - {x: -0.15371954, y: -0.0029638594}
+      - {x: -0.13445964, y: -0.021509357}

@@ -28,8 +28,8 @@ TagManager:
   - PlayerAttack
   - Item
   - Door
-  - 
-  - 
+  - Projectile
+  - EnemyProjectile
   - 
   - 
   - 

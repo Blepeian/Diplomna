@@ -18,7 +18,6 @@ public class EnemyStats : MonoBehaviour
     {
         currHealth = maxHealth;
         rend = gameObject.GetComponent<SpriteRenderer>();
-        
     }
 
     private void Update()
@@ -55,6 +54,6 @@ public class EnemyStats : MonoBehaviour
     {
         maxHealth = 1.1f*maxHealth;
         level = playerStats.level;
-        enemyAttack.LevelUp(level);
+        this.enemyAttack.LevelUp(level);
     }
 }

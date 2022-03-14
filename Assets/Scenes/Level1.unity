@@ -257,6 +257,7 @@ MonoBehaviour:
   maxFollowDistance: 10
   returning: 0
   eyes: {fileID: 1632498615}
+  lookingRight: 1
   enemyAttack: {fileID: 21718585}
   start: {x: 0, y: 0}
 --- !u!212 &21718587
@@ -588,6 +589,7 @@ MonoBehaviour:
   maxFollowDistance: 6
   returning: 0
   eyes: {fileID: 1848727176}
+  lookingRight: 1
   enemyAttack: {fileID: 654394811}
   start: {x: 0, y: 0}
 --- !u!212 &654394813
@@ -1035,6 +1037,7 @@ MonoBehaviour:
   maxFollowDistance: 10
   returning: 0
   eyes: {fileID: 600812465}
+  lookingRight: 1
   enemyAttack: {fileID: 705340742}
   start: {x: 0, y: 0}
 --- !u!212 &705340744
@@ -1529,6 +1532,7 @@ MonoBehaviour:
   maxFollowDistance: 10
   returning: 0
   eyes: {fileID: 1356424094}
+  lookingRight: 1
   enemyAttack: {fileID: 993131369}
   start: {x: 0, y: 0}
 --- !u!212 &993131371
@@ -5731,6 +5735,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -5, y: 19, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 1, y: 19, z: 0}
     second:
       serializedVersion: 2
@@ -7115,15 +7129,15 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 482
     m_Data: {fileID: 11400000, guid: d4d8e8b85f78dde45a26f38bdb1dab7c, type: 2}
-  - m_RefCount: 30
+  - m_RefCount: 31
     m_Data: {fileID: 11400000, guid: 3f593d6bb0dd96e4595955a4767d2a27, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 482
     m_Data: {fileID: -7039067237694632226, guid: 9716e918373cc2140a491a585038a4fd, type: 3}
-  - m_RefCount: 30
+  - m_RefCount: 31
     m_Data: {fileID: 936224480673305016, guid: 9716e918373cc2140a491a585038a4fd, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 512
+  - m_RefCount: 513
     m_Data:
       e00: 1
       e01: 0
@@ -7142,7 +7156,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 512
+  - m_RefCount: 513
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -7286,9 +7300,25 @@ CompositeCollider2D:
         Y: 120000000
       - X: -70000000
         Y: 194599984
-      - X: -50000000
+      - X: -50000100
         Y: 194599984
-      - X: -50000000
+      - X: -50000100
+        Y: 194599943
+      - X: -50000041
+        Y: 194599884
+      - X: -39999959
+        Y: 194599884
+      - X: -39999900
+        Y: 194599943
+      - X: -39999900
+        Y: 200000041
+      - X: -39999959
+        Y: 200000100
+      - X: -50000041
+        Y: 200000100
+      - X: -50000100
+        Y: 200000041
+      - X: -50000100
         Y: 200000000
       - X: -70000000
         Y: 200000000
@@ -7844,8 +7874,8 @@ CompositeCollider2D:
       - {x: -5.000029, y: 12}
       - {x: -7, y: 12.00003}
       - {x: -6.9999704, y: 19.46}
-      - {x: -5, y: 19.460028}
-      - {x: -5.000029, y: 20}
+      - {x: -3.99999, y: 19.460024}
+      - {x: -4.0000253, y: 20.00001}
       - {x: -7, y: 20.000029}
       - {x: -6.9999704, y: 25}
       - {x: 8, y: 25.000029}
@@ -52680,6 +52710,7 @@ MonoBehaviour:
   maxFollowDistance: 10
   returning: 0
   eyes: {fileID: 1782095776}
+  lookingRight: 1
   enemyAttack: {fileID: 2014882644}
   start: {x: 0, y: 0}
 --- !u!212 &2014882646
