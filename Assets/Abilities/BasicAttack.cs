@@ -39,7 +39,14 @@ public class BasicAttack : Ability
 
             foreach(Collider2D enemy in hits)
             {
-                enemy.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
+                if(enemy.gameObject.tag == "Enemy")
+                {
+                    enemy.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
+                }
+                else if(enemy.gameObject.tag == "Boss")
+                {
+                    enemy.gameObject.GetComponent<BossStats>().TakeDamage(damage);
+                }  
             }
             remainingCooldown = cooldown;
             isCasting = false;

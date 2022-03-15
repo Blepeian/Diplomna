@@ -100,7 +100,14 @@ public class LaserAttack : Ability
 
         foreach(RaycastHit2D enemy in hits)
         {
-            enemy.collider.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
+            if(enemy.collider.gameObject.tag == "Enemy")
+            {
+                enemy.collider.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
+            }
+            else if(enemy.collider.gameObject.tag == "Boss")
+            {
+                enemy.collider.gameObject.GetComponent<BossStats>().TakeDamage(damage);
+            }
         }
     }
 }

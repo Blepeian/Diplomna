@@ -114,11 +114,11 @@ public class BasicEnemyAI : MonoBehaviour
             body.velocity = new Vector2(velocity, body.velocity.y);
         }
 
-        if(velocity > 0)
+        if(lookingRight)
         {
             transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
-        else if(velocity < 0)
+        else
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }

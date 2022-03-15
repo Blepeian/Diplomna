@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WizardLizardAttack : Ability
+public class DragonFireball : Ability
 {
-    public GameObject WizShotPrefab;
+    public GameObject FireBallPrefab;
     public SpriteDirection projDirection;
 
-    private bool enemyLookingRight;
+    public bool enemyLookingRight;
     private float damage;
 
     private void Start()
     {
         remainingCooldown = cooldown;
-        damage = WizShotPrefab.GetComponent<Projectile>().damage;
+        damage = FireBallPrefab.GetComponent<Projectile>().damage;
     }
 
     private void Update()
@@ -25,9 +25,9 @@ public class WizardLizardAttack : Ability
     {
         if(remainingCooldown <= 0)
         {
-            GameObject  WizShotObj = Instantiate(WizShotPrefab, castPoint.position, Quaternion.identity);
+            GameObject  FireBallObj = Instantiate(FireBallPrefab, castPoint.position, Quaternion.identity);
 
-            enemyLookingRight = gameObject.GetComponent<BasicEnemyAI>().lookingRight;
+            enemyLookingRight = gameObject.GetComponent<DragonAI>().lookingRight;
             if(enemyLookingRight)
             {
                 projDirection = SpriteDirection.Right;
@@ -37,10 +37,10 @@ public class WizardLizardAttack : Ability
                 projDirection = SpriteDirection.Left;
             }
 
-            WizShotObj.GetComponent<Projectile>().spriteDirection = projDirection;
-            WizShotObj.GetComponent<Projectile>().damage = damage;
-            WizShotObj.GetComponent<Projectile>().CheckDirection();
-            WizShotObj.GetComponent<Projectile>().MoveProjectile();
+            FireBallObj.GetComponent<Projectile>().spriteDirection = projDirection;
+            FireBallObj.GetComponent<Projectile>().damage = damage;
+            FireBallObj.GetComponent<Projectile>().CheckDirection();
+            FireBallObj.GetComponent<Projectile>().MoveProjectile();
 
             remainingCooldown = cooldown;
         }
@@ -50,7 +50,7 @@ public class WizardLizardAttack : Ability
     {
         while(level < levelToGetTo)
         {
-            damage = 1.1f*damage;
+            damage = 1.05f*damage;
             level++;
         }
     }

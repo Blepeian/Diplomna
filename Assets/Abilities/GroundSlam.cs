@@ -59,7 +59,14 @@ public class GroundSlam : Ability
 
             foreach(RaycastHit2D enemy in hits)
             {
-                enemy.collider.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
+                if(enemy.collider.gameObject.tag == "Enemy")
+                {
+                    enemy.collider.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
+                }
+                else if(enemy.collider.gameObject.tag == "Boss")
+                {
+                    enemy.collider.gameObject.GetComponent<BossStats>().TakeDamage(damage);
+                }
                 enemy.collider.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, knockback));
             }
 
