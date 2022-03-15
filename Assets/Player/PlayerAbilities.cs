@@ -9,22 +9,34 @@ public class PlayerAbilities : MonoBehaviour
     public Ability Ability1 = null;
     public Ability Ability2 = null;
     public Ability Ability3 = null;
+    public PlayerStats playerStats;
+
+    private AbilityUI ui1;
+    private AbilityUI ui2;
+    private AbilityUI ui3;
 
     private void Awake()
     {
-        level = GameObject.Find("Player").GetComponent<PlayerStats>().level;
+        level = GameObject.FindWithTag("Player").GetComponent<PlayerStats>().level;
         abilityNumber = 1;
         string newAbilityName = "BasicAttack";
         System.Type newAbility = System.Type.GetType(newAbilityName);
         Ability1 = (Ability)gameObject.AddComponent(newAbility);
         Ability1.castPoint = gameObject.transform;
         Ability1.level = level;
+        playerStats = (PlayerStats)GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+
+        ui1 = (AbilityUI)GameObject.FindWithTag("AbilityUI1").GetComponent<AbilityUI>();
+        ui2 = (AbilityUI)GameObject.FindWithTag("AbilityUI2").GetComponent<AbilityUI>();
+        ui3 = (AbilityUI)GameObject.FindWithTag("AbilityUI3").GetComponent<AbilityUI>();
+
+        Ability1.GetDataForUI(ui1);
     }
 
     void Update()
     {
         GetInput();
-        if(GameObject.Find("Player").GetComponent<PlayerStats>().level > level)
+        if(playerStats.level > level)
         {
             LevelUp();
         }
@@ -35,47 +47,29 @@ public class PlayerAbilities : MonoBehaviour
         string newAbilityName = ability.scriptName;
         System.Type newAbility = System.Type.GetType(newAbilityName);
 
-        if(abilityNumber < 3)
+        switch(slot)
         {
-            switch(abilityNumber)
-            {
-                case 1:
-                    Ability2 = (Ability)gameObject.AddComponent(newAbility);
-                    Ability2.castPoint = gameObject.transform;
-                    Ability2.level = level;
-                    break;
-                case 2:
-                    Ability3 = (Ability)gameObject.AddComponent(newAbility);
-                    Ability3.castPoint = gameObject.transform;
-                    Ability3.level = level;
-                    break;
-            }
-
-            abilityNumber++;
-        }
-        else
-        {
-            switch(slot)
-            {
-                case 1:
-                    Destroy(Ability1);
-                    Ability1 = (Ability)gameObject.AddComponent(newAbility);
-                    Ability1.castPoint = gameObject.transform;
-                    Ability1.level = level;
-                    break;
-                case 2:
-                    Destroy(Ability2);
-                    Ability2 = (Ability)gameObject.AddComponent(newAbility);
-                    Ability2.castPoint = gameObject.transform;
-                    Ability2.level = level;
-                    break;
-                case 3:
-                    Destroy(Ability3);
-                    Ability3 = (Ability)gameObject.AddComponent(newAbility);
-                    Ability3.castPoint = gameObject.transform;
-                    Ability3.level = level;
-                    break;
-            }
+            case 1:
+                Destroy(Ability1);
+                Ability1 = (Ability)gameObject.AddComponent(newAbility);
+                Ability1.castPoint = gameObject.transform;
+                Ability1.level = level;
+                Ability1.GetDataForUI(ui1);
+                break;
+            case 2:
+                Destroy(Ability2);
+                Ability2 = (Ability)gameObject.AddComponent(newAbility);
+                Ability2.castPoint = gameObject.transform;
+                Ability2.level = level;
+                Ability2.GetDataForUI(ui2);
+                break;
+            case 3:
+                Destroy(Ability3);
+                Ability3 = (Ability)gameObject.AddComponent(newAbility);
+                Ability3.castPoint = gameObject.transform;
+                Ability3.level = level;
+                Ability3.GetDataForUI(ui3);
+                break;
         }
     }
 
@@ -86,6 +80,7 @@ public class PlayerAbilities : MonoBehaviour
             if(!CheckCasting())
             {
                 Ability1.Cast();
+                ui1.StartCooldown();
             }
         }
 
@@ -94,6 +89,7 @@ public class PlayerAbilities : MonoBehaviour
             if(!CheckCasting())
             {
                 Ability2.Cast();
+                ui2.StartCooldown();
             }
         }
 
@@ -102,6 +98,7 @@ public class PlayerAbilities : MonoBehaviour
             if(!CheckCasting())
             {
                 Ability3.Cast();
+                ui3.StartCooldown();
             }
         }
     }

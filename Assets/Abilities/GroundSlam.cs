@@ -15,7 +15,7 @@ public class GroundSlam : Ability
     {
         cooldown = 3f;
         remainingCooldown = 0;
-        abilityName = "Deep Stomp";
+        abilityName = "Stomp";
         description = "Call on the old ones' strength and stomp the ground, sending enemies flying upwards for a short time.";
         damage = 50f;
         attackRange = 2.5f;
@@ -24,6 +24,7 @@ public class GroundSlam : Ability
         scriptName = "GroundSlam";
         knockback = 200f;
         isCasting = false;
+        icon = Resources.Load<Sprite>("stomp_icon");
     }
 
     void Update()
@@ -58,7 +59,14 @@ public class GroundSlam : Ability
 
             foreach(RaycastHit2D enemy in hits)
             {
-                enemy.collider.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
+                if(enemy.collider.gameObject.tag == "Enemy")
+                {
+                    enemy.collider.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
+                }
+                else if(enemy.collider.gameObject.tag == "Boss")
+                {
+                    enemy.collider.gameObject.GetComponent<BossStats>().TakeDamage(damage);
+                }
                 enemy.collider.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, knockback));
             }
 

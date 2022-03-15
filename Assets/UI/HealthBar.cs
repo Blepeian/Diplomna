@@ -25,7 +25,7 @@ public class HealthBar : MonoBehaviour
         slider.value = health;
 
         string[] temp = healthValueText.text.Split('/');
-        healthValueText.text = health + "/" + temp[1];
+        healthValueText.text = (int)health + "/" + temp[1];
 
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }

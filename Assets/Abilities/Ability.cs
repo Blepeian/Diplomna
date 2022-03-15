@@ -26,4 +26,10 @@ public abstract class Ability : MonoBehaviour
         item.description = this.description;
         item.gameObject.GetComponent<SpriteRenderer>().sprite = this.icon;
     }
+
+    public virtual void GetDataForUI(AbilityUI ui)
+    {
+        ui.cooldown = this.cooldown;
+        ui.icon.sprite = this.icon;
+    }
 }

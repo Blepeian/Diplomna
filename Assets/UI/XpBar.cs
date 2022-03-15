@@ -9,7 +9,7 @@ public class XpBar : MonoBehaviour
 
     private void Start()
     {
-        levelDisplay.text = "lvl." + GameObject.Find("Player").GetComponent<PlayerStats>().level;
+        levelDisplay.text = "lvl." + GameObject.FindWithTag("Player").GetComponent<PlayerStats>().level;
     }
 
     public void AddXpToBar(int xpToAdd)

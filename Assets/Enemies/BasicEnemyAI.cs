@@ -12,36 +12,57 @@ public class BasicEnemyAI : MonoBehaviour
     public float moveSpeed;
     public enemyState state;
     public float moveDistance;
-    public GameObject player;
+    public Transform playerTransform;
     public float attackRange;
     public Rigidbody2D body;
     public float maxFollowDistance;
     public bool returning = false;
+    public Transform eyes;
+    public bool lookingRight = true;
 
     public Ability enemyAttack;
 
     private float sightDistance;
-    private bool lookingRight = true;
     private float velocity;
     [SerializeField] private Vector2 start;
-    private LayerMask playerLayer;
+    private RaycastHit2D[] seenObjs;
     
     void Start()
     {
         start = transform.position;
         state = enemyState.Idle;
-        player = GameObject.Find("Player");
         body = gameObject.GetComponent<Rigidbody2D>();
-        playerLayer = LayerMask.GetMask("Player");
         velocity = -moveSpeed;
         sightDistance = attackRange * 2;
     }
 
     void Update()
     {
-        if(Vector2.Distance(transform.position, player.transform.position) <= sightDistance)
+        if(playerTransform == null)
         {
-            state = enemyState.Attacking;
+            playerTransform = GameObject.Find("Player").transform;
+        }
+
+        ControlEnemy();
+    }
+
+    private void ControlEnemy()
+    {
+        if(lookingRight)
+        {
+            seenObjs = Physics2D.RaycastAll(eyes.position, Vector2.right, sightDistance);
+        }
+        else
+        {
+            seenObjs = Physics2D.RaycastAll(eyes.position, Vector2.left, sightDistance);
+        }
+
+        foreach(RaycastHit2D obj in seenObjs)
+        {
+            if(obj.collider.gameObject.tag == "Player")
+            {
+                state = enemyState.Attacking;
+            }
         }
 
         if(state == enemyState.Idle)
@@ -65,40 +86,41 @@ public class BasicEnemyAI : MonoBehaviour
         
         if(state == enemyState.Attacking)
         {
-            if(Vector2.Distance(player.transform.position, transform.position) <= maxFollowDistance)
+            if(Vector2.Distance(playerTransform.position, transform.position) <= maxFollowDistance)
             {
-                if(Vector2.Distance(player.transform.position, transform.position) <= attackRange)
+                if(Vector2.Distance(playerTransform.position, transform.position) <= attackRange)
                 {
                     velocity = 0;
                     enemyAttack.Cast();
                 }
-                else if(player.transform.position.x > transform.position.x)
+                else if(playerTransform.position.x > transform.position.x)
                 {
                     velocity = moveSpeed;
                     lookingRight = true;
                 }
-                else if(player.transform.position.x < transform.position.x)
+                else if(playerTransform.position.x < transform.position.x)
                 {
                     velocity =  -moveSpeed;
                     lookingRight = false;
                 }
             }
-            else if(Vector2.Distance(player.transform.position, transform.position) > maxFollowDistance)
+            else if(Vector2.Distance(playerTransform.position, transform.position) > maxFollowDistance)
             {
                 transform.position = start;
                 state = enemyState.Idle;
             }
 
-            if(velocity > 0)
-            {
-                transform.localRotation = Quaternion.Euler(0, 180, 0);
-            }
-            else if(velocity < 0)
-            {
-                transform.localRotation = Quaternion.Euler(0, 0, 0);
-            }
 
             body.velocity = new Vector2(velocity, body.velocity.y);
+        }
+
+        if(lookingRight)
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
     }
 }
