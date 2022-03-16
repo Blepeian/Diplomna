@@ -6,7 +6,7 @@ public class EnemyStats : MonoBehaviour
 {
     public float maxHealth;
     public float currHealth;
-    public int xpToGive;
+    public int currencyToGive;
     public int level;
     public Ability enemyAttack;
     public PlayerStats playerStats = null;
@@ -16,6 +16,7 @@ public class EnemyStats : MonoBehaviour
 
     private void Awake()
     {
+        level = 1;
         currHealth = maxHealth;
         rend = gameObject.GetComponent<SpriteRenderer>();
     }
@@ -46,7 +47,7 @@ public class EnemyStats : MonoBehaviour
         if (currHealth <= 0)
         {
             Destroy(gameObject);
-            playerStats.AddXp(xpToGive);
+            playerStats.AddCurrency(currencyToGive);
         }
     }
 

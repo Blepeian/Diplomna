@@ -57,6 +57,7 @@ public class DragonAI : MonoBehaviour
             {
                 bossDoor.SetActive(true);
                 state = enemyState.Attacking;
+                gameObject.GetComponent<BossStats>().StartBattle();
             }
         }
         if(state == enemyState.Idle)

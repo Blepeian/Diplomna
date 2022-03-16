@@ -8,13 +8,14 @@ TagManager:
   - Trap
   - Enemy
   - HealthBar
-  - XpBar
   - Chest
   - AbilitySelect
   - AbilityUI1
   - AbilityUI2
   - AbilityUI3
   - Boss
+  - LevelDisplay
+  - BossHealthBar
   layers:
   - Default
   - TransparentFX
@@ -31,7 +32,7 @@ TagManager:
   - Door
   - Projectile
   - EnemyProjectile
-  - 
+  - PlayerProjectile
   - 
   - 
   - 

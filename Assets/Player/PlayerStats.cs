@@ -13,9 +13,9 @@ public class PlayerStats : MonoBehaviour
     
     private SpriteRenderer rend;
     public int level;
-    public int xp;
-    private int xpToLevelUp = 100;
-    public XpBar xpBar = null;
+    public int currency;
+    private int currencyToLevelUp = 100;
+    public LevelDisplay lvlDisplay = null;
 
     private void Start()
     {
@@ -33,9 +33,10 @@ public class PlayerStats : MonoBehaviour
             MaxHealth();
         }
 
-        if(xpBar == null)
+        if(lvlDisplay == null)
         {
-            xpBar = (XpBar)GameObject.FindWithTag("XpBar").GetComponent<XpBar>();
+            lvlDisplay = (LevelDisplay)GameObject.FindWithTag("LevelDisplay").GetComponent<LevelDisplay>();
+            lvlDisplay.levelDisplay.text = "lvl." + level;
         }
 
         currIFrameTime -= Time.deltaTime;
@@ -45,13 +46,8 @@ public class PlayerStats : MonoBehaviour
         }
         else
         {
-            rend.color = new Color(255f, 255f, 255f );
+            rend.color = new Color(255f, 255f, 255f);
             isInvincible = false;
-        }
-
-        if(xp >= xpToLevelUp)
-        {
-            LevelUp();
         }
     }
 
@@ -78,19 +74,22 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public void AddXp(int xpToAdd)
+    public void AddCurrency(int currencyToAdd)
     {
-        xp += xpToAdd;
-        xpBar.AddXpToBar(xp);
+        currency += currencyToAdd;
     }
 
-    private void LevelUp()
+    public void LevelUp()
     {
-        level++;
-        xpBar.LevelUp(level);
-        xp -= xpToLevelUp;
-        xpBar.AddXpToBar(xp);
-        maxHealth = 1.2f*maxHealth;
-        MaxHealth();
+        while(currency >= currencyToLevelUp)
+        {
+            level++;
+            lvlDisplay.LevelUp(level);
+            maxHealth = 1.2f*maxHealth;
+            currHealth += maxHealth/2;
+            healthBar.SetHealth(currHealth);
+            currency -= currencyToLevelUp;
+        }
+        
     }
 }

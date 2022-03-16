@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Level2Door : MonoBehaviour
+public class Shop2Door : MonoBehaviour
 {
     private LevelManager manager;
 
@@ -17,7 +17,7 @@ public class Level2Door : MonoBehaviour
         DontDestroyOnLoad(manager.gameObject);
         DontDestroyOnLoad(manager.player.gameObject);
         DontDestroyOnLoad(manager.ui.gameObject);
-        SceneManager.LoadScene("shop2");
+        SceneManager.LoadScene("level3");
         manager.player.transform.position = new Vector3(0,0,0);
     }
 }
