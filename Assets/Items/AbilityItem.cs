@@ -47,7 +47,7 @@ public class AbilityItem : Item
 
     private void PickAbility()
     {
-        int abID = Random.Range(1, 4);
+        int abID = Random.Range(1, 5);
 
         switch(abID){
             case 1:
@@ -66,6 +66,9 @@ public class AbilityItem : Item
                 ability = (Ability)grSlamAttack;
                 break;
             case 4:
+                EldritchBlast blast = (EldritchBlast)gameObject.AddComponent(System.Type.GetType("EldritchBlast"));
+                blast.GetData(this);
+                ability = (Ability)blast;
                 break;
         }
 

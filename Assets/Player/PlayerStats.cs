@@ -19,6 +19,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        level = 1;
         currIFrameTime = 0;
         isInvincible = false;
         rend = gameObject.GetComponent<SpriteRenderer>();

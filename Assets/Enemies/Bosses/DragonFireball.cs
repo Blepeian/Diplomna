@@ -30,14 +30,13 @@ public class DragonFireball : Ability
             enemyLookingRight = gameObject.GetComponent<DragonAI>().lookingRight;
             if(enemyLookingRight)
             {
-                projDirection = SpriteDirection.Right;
+                FireBallObj.GetComponent<Projectile>().spriteDirection = SpriteDirection.Right;
             }
             else
             {
-                projDirection = SpriteDirection.Left;
+                FireBallObj.GetComponent<Projectile>().spriteDirection = SpriteDirection.Left;
             }
 
-            FireBallObj.GetComponent<Projectile>().spriteDirection = projDirection;
             FireBallObj.GetComponent<Projectile>().damage = damage;
             FireBallObj.GetComponent<Projectile>().CheckDirection();
             FireBallObj.GetComponent<Projectile>().MoveProjectile();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Ability : MonoBehaviour
 {
-    public int level;
+    public int level = 1;
     public string scriptName;
     public Transform castPoint;
     public string abilityName;

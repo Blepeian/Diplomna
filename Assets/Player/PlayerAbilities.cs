@@ -80,7 +80,10 @@ public class PlayerAbilities : MonoBehaviour
             if(!CheckCasting())
             {
                 Ability1.Cast();
-                ui1.StartCooldown();
+                if(!ui1.onCooldown)
+                {
+                    ui1.StartCooldown();
+                }
             }
         }
 
@@ -89,7 +92,10 @@ public class PlayerAbilities : MonoBehaviour
             if(!CheckCasting())
             {
                 Ability2.Cast();
-                ui2.StartCooldown();
+                if(!ui2.onCooldown)
+                {
+                    ui2.StartCooldown();
+                }
             }
         }
 
@@ -98,7 +104,10 @@ public class PlayerAbilities : MonoBehaviour
             if(!CheckCasting())
             {
                 Ability3.Cast();
-                ui3.StartCooldown();
+                if(!ui3.onCooldown)
+                {
+                    ui3.StartCooldown();
+                }
             }
         }
     }

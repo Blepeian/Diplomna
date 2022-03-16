@@ -9,9 +9,9 @@ public class AbilityUI : MonoBehaviour
     public Text cooldownText;
     public Image overlay;
     public float cooldown;
+    public bool onCooldown;
 
     private float remainingCooldown;
-    private bool onCooldown;
 
     private void Start()
     {
