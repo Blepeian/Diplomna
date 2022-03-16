@@ -110,6 +110,14 @@ public class BasicEnemyAI : MonoBehaviour
                 state = enemyState.Idle;
             }
 
+            if(playerTransform.position.x > transform.position.x)
+            {
+                lookingRight = true;
+            }
+            else if(playerTransform.position.x < transform.position.x)
+            {
+                lookingRight = false;
+            }
 
             body.velocity = new Vector2(velocity, body.velocity.y);
         }

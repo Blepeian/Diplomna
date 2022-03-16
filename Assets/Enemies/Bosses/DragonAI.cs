@@ -81,11 +81,18 @@ public class DragonAI : MonoBehaviour
             else if(playerTransform.position.x > transform.position.x)
             {
                 velocity = moveSpeed;
-                lookingRight = true;
             }
             else if(playerTransform.position.x < transform.position.x)
             {
                 velocity =  -moveSpeed;
+            }
+
+            if(playerTransform.position.x > transform.position.x)
+            {
+                lookingRight = true;
+            }
+            else if(playerTransform.position.x < transform.position.x)
+            {
                 lookingRight = false;
             }
 
