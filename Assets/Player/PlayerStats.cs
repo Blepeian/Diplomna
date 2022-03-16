@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -72,6 +73,7 @@ public class PlayerStats : MonoBehaviour
         if (currHealth <= 0)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene("level1");
         }
     }
 
