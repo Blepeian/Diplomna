@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PaidChestScript : MonoBehaviour
 {
-    public GameObject abItemPrefab;
-    public GameObject abItem;
     public GameObject interact;
     public int price;
     public TextMesh priceText;
+
+    public GameObject hpItemPrefab;
 
     [SerializeField]private Collider2D chestCol;
     private bool playerInFront;
@@ -50,8 +50,15 @@ public class PaidChestScript : MonoBehaviour
     {
         if(GameObject.FindWithTag("Player").GetComponent<PlayerStats>().currency >= price)
         {
-            abItem = Instantiate(abItemPrefab, gameObject.transform.position, Quaternion.identity);
-            abItem.name = "AbilityItem";
+            int itemID = Random.Range(1, 2);
+            
+            switch(itemID)
+            {
+                case 1:
+                    Instantiate(hpItemPrefab, transform.position, Quaternion.identity);
+                    break;
+            }
+
             chestCol.enabled = false;
             interact.SetActive(false);
             gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Background";

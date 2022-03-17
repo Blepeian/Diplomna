@@ -10,6 +10,8 @@ public class PlayerStats : MonoBehaviour
     public bool isInvincible;
     public float totalIFrameTime;
     private float currIFrameTime;
+
+    public Item equippedItem;
     
     private SpriteRenderer rend;
     public int level;
@@ -57,6 +59,12 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
+    public void UpdateHealthBar()
+    {
+        healthBar.SetHealth(currHealth);
+        healthBar.SetMaxHealth(maxHealth);
+    }
+
     public void TakeDamage(float damage)
     {
         if(!isInvincible)
@@ -87,7 +95,7 @@ public class PlayerStats : MonoBehaviour
             lvlDisplay.LevelUp(level);
             maxHealth = 1.2f*maxHealth;
             currHealth += maxHealth/2;
-            healthBar.SetHealth(currHealth);
+            UpdateHealthBar();
             currency -= currencyToLevelUp;
         }
         
