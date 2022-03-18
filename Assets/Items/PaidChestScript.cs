@@ -9,6 +9,8 @@ public class PaidChestScript : MonoBehaviour
     public TextMesh priceText;
 
     public GameObject hpItemPrefab;
+    public GameObject coinItemPrefab;
+    public GameObject iframeItemPrefab;
 
     [SerializeField]private Collider2D chestCol;
     private bool playerInFront;
@@ -50,12 +52,18 @@ public class PaidChestScript : MonoBehaviour
     {
         if(GameObject.FindWithTag("Player").GetComponent<PlayerStats>().currency >= price)
         {
-            int itemID = Random.Range(1, 2);
+            int itemID = Random.Range(3, 4);
             
             switch(itemID)
             {
                 case 1:
                     Instantiate(hpItemPrefab, transform.position, Quaternion.identity);
+                    break;
+                case 2:
+                    Instantiate(coinItemPrefab, transform.position, Quaternion.identity);
+                    break;
+                case 3:
+                    Instantiate(iframeItemPrefab, transform.position, Quaternion.identity);
                     break;
             }
 

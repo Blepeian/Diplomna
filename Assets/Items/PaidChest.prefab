@@ -128,6 +128,8 @@ MonoBehaviour:
   price: 200
   priceText: {fileID: 8532148511570884658}
   hpItemPrefab: {fileID: 1140454548634837248, guid: 1dbeef5fd4ebae141b116e0e4bacfd3e, type: 3}
+  coinItemPrefab: {fileID: 2115031803276077792, guid: 97b73eb0451cad042928159d7f971653, type: 3}
+  iframeItemPrefab: {fileID: 4558862350980389018, guid: 77037d89b61bcdb4aa1635b071933d87, type: 3}
   chestCol: {fileID: 6447689768793583835}
 --- !u!1 &6447689767862003903
 GameObject:

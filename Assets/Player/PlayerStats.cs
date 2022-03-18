@@ -6,18 +6,20 @@ public class PlayerStats : MonoBehaviour
     public float maxHealth;
     public float currHealth;
     public HealthBar healthBar = null;
+    public LevelDisplay lvlDisplay = null;
 
     public bool isInvincible;
     public float totalIFrameTime;
     private float currIFrameTime;
 
-    public Item equippedItem;
+    public Item equippedItem = null;
+    public float coinBuff = 1;
+    public ItemUI itemUI;
     
     private SpriteRenderer rend;
     public int level;
     public int currency;
     private int currencyToLevelUp = 100;
-    public LevelDisplay lvlDisplay = null;
 
     private void Start()
     {
@@ -25,6 +27,7 @@ public class PlayerStats : MonoBehaviour
         currIFrameTime = 0;
         isInvincible = false;
         rend = gameObject.GetComponent<SpriteRenderer>();
+        itemUI = GameObject.FindWithTag("ItemUI").GetComponent<ItemUI>();
     }
 
     void Update()
@@ -84,7 +87,7 @@ public class PlayerStats : MonoBehaviour
 
     public void AddCurrency(int currencyToAdd)
     {
-        currency += currencyToAdd;
+        currency += (int)(coinBuff * currencyToAdd);
     }
 
     public void LevelUp()
@@ -98,6 +101,17 @@ public class PlayerStats : MonoBehaviour
             UpdateHealthBar();
             currency -= currencyToLevelUp;
         }
-        
+    }
+
+    public void EquipItem(Item newItem)
+    {
+        if(equippedItem != null)
+        {
+            equippedItem.Unequip();
+            Destroy(equippedItem); 
+        }
+
+        newItem.Equip();
+        itemUI.icon.sprite = newItem.icon;
     }
 }

@@ -16,6 +16,7 @@ TagManager:
   - Boss
   - LevelDisplay
   - BossHealthBar
+  - ItemUI
   layers:
   - Default
   - TransparentFX

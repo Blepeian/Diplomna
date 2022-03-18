@@ -252,8 +252,11 @@ MonoBehaviour:
   maxHealth: 250
   currHealth: 0
   healthBar: {fileID: 0}
+  lvlDisplay: {fileID: 0}
   isInvincible: 0
-  totalIFrameTime: 3
+  totalIFrameTime: 2
+  equippedItem: {fileID: 0}
+  coinBuff: 1
+  itemUI: {fileID: 0}
   level: 0
-  xp: 0
-  xpBar: {fileID: 0}
+  currency: 0
