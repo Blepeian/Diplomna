@@ -24,9 +24,32 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.collider.gameObject.tag == "Player")
+        if(gameObject.layer == 13)
         {
-            col.collider.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+            if(col.collider.gameObject.tag == "Player")
+            {
+                col.collider.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+            }
+            else if(col.collider.gameObject.tag == "Enemy")
+            {
+                col.collider.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
+            }
+        }
+
+        if(gameObject.layer == 14)
+        {
+            if(col.collider.gameObject.tag == "Player")
+            {
+                col.collider.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+            }
+        }
+
+        if(gameObject.layer == 15)
+        {
+            if(col.collider.gameObject.tag == "Enemy")
+            {
+                col.collider.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
+            }
         }
 
         Destroy(gameObject);

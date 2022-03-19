@@ -12,8 +12,11 @@ public class LevelManager : MonoBehaviour
     public GameObject ui = null;
     public GameObject player = null;
 
+    public int levelNum;
+
     private void Awake()
     {
+        levelNum = 1;
         Initialize();
     }
 
@@ -24,20 +27,26 @@ public class LevelManager : MonoBehaviour
 
     public void Initialize()
     {
-        if(ui == null)
-        {
-            ui = Instantiate(UIPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-        }
+        // if(ui == null)
+        // {
+        //     ui = Instantiate(UIPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        // }
 
         if(player == null)
         {
-            player = Instantiate(playerPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            player = Instantiate(playerPrefab, new Vector3(64, 18, 0), Quaternion.identity);
         }
 
         mainCamera = Camera.main;
-        ui.GetComponent<Canvas>().worldCamera = mainCamera;
+        // ui.GetComponent<Canvas>().worldCamera = mainCamera;
         player.name = "Player";
-        ui.name = "UI";
+        // ui.name = "UI";
         player.GetComponent<PlayerStats>().enabled = true;
+    }
+
+    public void ActivateAbSelectUI(AbilityItem item)
+    {
+        abUI.gameObject.SetActive(true);
+        abUI.GetAbility(item);
     }
 }

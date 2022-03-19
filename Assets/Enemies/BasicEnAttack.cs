@@ -36,8 +36,6 @@ public class BasicEnAttack : Ability
             }
 
             remainingCooldown = cooldown;
-
-            Debug.Log("Attacking");
         }
     }
 

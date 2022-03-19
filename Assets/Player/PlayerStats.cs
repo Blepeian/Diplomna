@@ -28,6 +28,7 @@ public class PlayerStats : MonoBehaviour
         isInvincible = false;
         rend = gameObject.GetComponent<SpriteRenderer>();
         itemUI = GameObject.FindWithTag("ItemUI").GetComponent<ItemUI>();
+        currHealth = maxHealth;
     }
 
     void Update()
@@ -35,7 +36,7 @@ public class PlayerStats : MonoBehaviour
         if(healthBar == null)
         {
             healthBar = (HealthBar)GameObject.FindWithTag("HealthBar").GetComponent<HealthBar>();
-            MaxHealth();
+            UpdateHealthBar();
         }
 
         if(lvlDisplay == null)
@@ -59,13 +60,12 @@ public class PlayerStats : MonoBehaviour
     private void MaxHealth()
     {
         currHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        UpdateHealthBar();
     }
 
     public void UpdateHealthBar()
     {
-        healthBar.SetHealth(currHealth);
-        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currHealth, maxHealth);
     }
 
     public void TakeDamage(float damage)
@@ -75,7 +75,7 @@ public class PlayerStats : MonoBehaviour
             rend.color = new Color(255f, 0f, 126f );
             currIFrameTime = totalIFrameTime;
             currHealth -= damage;
-            healthBar.SetHealth(currHealth);
+            healthBar.SetHealth(currHealth, maxHealth);
         }
         
         if (currHealth <= 0)

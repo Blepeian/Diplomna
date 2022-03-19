@@ -12,7 +12,7 @@ public class AbilitySelectUI : MonoBehaviour
     private Ability ability;
     private AbilityItem currItem;
 
-    private void Awake()
+    private void Start()
     {
         GameObject.Find("LevelManager").GetComponent<LevelManager>().abUI = this;
         gameObject.SetActive(false);

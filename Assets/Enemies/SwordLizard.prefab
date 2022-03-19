@@ -109,6 +109,7 @@ MonoBehaviour:
   maxFollowDistance: 10
   returning: 0
   eyes: {fileID: 9156514155222102922}
+  lookingRight: 1
   enemyAttack: {fileID: 9156514154617933653}
   start: {x: 0, y: 0}
 --- !u!114 &9156514154617933653
@@ -151,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 150
   currHealth: 0
-  xpToGive: 20
+  currencyToGive: 25
   level: 0
   enemyAttack: {fileID: 9156514154617933653}
   playerStats: {fileID: 0}

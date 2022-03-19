@@ -11,9 +11,9 @@ public class PlayerAbilities : MonoBehaviour
     public Ability Ability3 = null;
     public PlayerStats playerStats;
 
-    private AbilityUI ui1;
-    private AbilityUI ui2;
-    private AbilityUI ui3;
+    private AbilityUI ui1 = null;
+    private AbilityUI ui2 = null;
+    private AbilityUI ui3 = null;
 
     private void Awake()
     {
@@ -25,16 +25,14 @@ public class PlayerAbilities : MonoBehaviour
         Ability1.castPoint = gameObject.transform;
         Ability1.level = level;
         playerStats = (PlayerStats)GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
-
-        ui1 = (AbilityUI)GameObject.FindWithTag("AbilityUI1").GetComponent<AbilityUI>();
-        ui2 = (AbilityUI)GameObject.FindWithTag("AbilityUI2").GetComponent<AbilityUI>();
-        ui3 = (AbilityUI)GameObject.FindWithTag("AbilityUI3").GetComponent<AbilityUI>();
-
-        Ability1.GetDataForUI(ui1);
     }
 
     void Update()
     {
+        if(ui1 == null || ui2 == null || ui3 == null)
+        {
+            SetUI();
+        }
         GetInput();
         if(playerStats.level > level)
         {
@@ -149,6 +147,25 @@ public class PlayerAbilities : MonoBehaviour
         if(Ability3 != null)
         {
             Ability3.LevelUp(level);
+        }
+    }
+
+    private void SetUI()
+    {
+        ui1 = (AbilityUI)GameObject.FindWithTag("AbilityUI1").GetComponent<AbilityUI>();
+        ui2 = (AbilityUI)GameObject.FindWithTag("AbilityUI2").GetComponent<AbilityUI>();
+        ui3 = (AbilityUI)GameObject.FindWithTag("AbilityUI3").GetComponent<AbilityUI>();
+
+        Ability1.GetDataForUI(ui1);
+
+        if(Ability2 != null)
+        {
+            Ability2.GetDataForUI(ui1);
+        }
+
+        if(Ability3 != null)
+        {
+            Ability3.GetDataForUI(ui1);
         }
     }
 }

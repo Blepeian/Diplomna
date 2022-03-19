@@ -150,9 +150,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currHealth: 0
-  xpToGive: 35
+  currencyToGive: 35
   level: 0
-  enemyAttack: {fileID: 0}
+  enemyAttack: {fileID: 959885839140052008}
   playerStats: {fileID: 0}
 --- !u!114 &7703169298117140534
 MonoBehaviour:
@@ -204,7 +204,6 @@ MonoBehaviour:
     m_Bits: 0
   WizShotPrefab: {fileID: 8593015757264655071, guid: dddc47eef3d7c4846b70189f8e50c600, type: 3}
   projDirection: 0
-  enemyLookingRight: 0
 --- !u!1 &1352832824536901017
 GameObject:
   m_ObjectHideFlags: 0

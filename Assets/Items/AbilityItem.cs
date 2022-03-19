@@ -16,7 +16,8 @@ public class AbilityItem : Item
         interact.SetActive(false);
         playerInFront = false;
 
-        ui = (AbilitySelectUI)GameObject.Find("LevelManager").GetComponentInChildren<LevelManager>().abUI;
+        LevelManager manager = (LevelManager)FindObjectOfType(typeof(LevelManager));
+        ui = manager.abUI;
     }
 
     private void Update()
