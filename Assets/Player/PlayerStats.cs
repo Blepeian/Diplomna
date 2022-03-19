@@ -92,15 +92,39 @@ public class PlayerStats : MonoBehaviour
 
     public void LevelUp()
     {
+        bool atMax = false;
+
+        if(currHealth == maxHealth)
+        {
+            atMax = true;
+        }
+
         while(currency >= currencyToLevelUp)
         {
             level++;
             lvlDisplay.LevelUp(level);
             maxHealth = 1.2f*maxHealth;
-            currHealth += maxHealth/2;
-            UpdateHealthBar();
+            if((currHealth + maxHealth/10) < maxHealth)
+            {
+                if(!atMax)
+                {
+                    currHealth += maxHealth/10;
+                }
+            }
+            else
+            {
+                atMax = true;
+            }
             currency -= currencyToLevelUp;
+            currencyToLevelUp += (int)(0.2f * currencyToLevelUp);
         }
+
+        if(atMax)
+        {
+            currHealth = maxHealth;
+        }
+
+        UpdateHealthBar();
     }
 
     public void EquipItem(Item newItem)
