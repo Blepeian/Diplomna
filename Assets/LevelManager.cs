@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
     {
         if(player == null)
         {
-            player = Instantiate(playerPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            player = Instantiate(playerPrefab, new Vector3(64, 18, 0), Quaternion.identity);
         }
 
         mainCamera = Camera.main;

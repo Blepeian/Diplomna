@@ -14,28 +14,31 @@ public class DoorScript : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        DontDestroyOnLoad(manager.gameObject);
-        DontDestroyOnLoad(manager.player.gameObject);
-        
-        switch(manager.levelNum)
+        if(collider.gameObject.tag == "Player")
         {
-            case 1:
-                manager.levelNum++;
-                SceneManager.LoadScene("shop1");
-                break;
-            case 2:
-                manager.levelNum++;
-                SceneManager.LoadScene("level2");
-                break;
-            case 3:
-                manager.levelNum++;
-                SceneManager.LoadScene("shop2");
-                break;
-            case 4:
-                manager.levelNum++;
-                SceneManager.LoadScene("level3");
-                break;
+            DontDestroyOnLoad(manager.gameObject);
+            DontDestroyOnLoad(manager.player.gameObject);
+            
+            switch(manager.levelNum)
+            {
+                case 1:
+                    manager.levelNum++;
+                    SceneManager.LoadScene("shop1");
+                    break;
+                case 2:
+                    manager.levelNum++;
+                    SceneManager.LoadScene("level2");
+                    break;
+                case 3:
+                    manager.levelNum++;
+                    SceneManager.LoadScene("shop2");
+                    break;
+                case 4:
+                    manager.levelNum++;
+                    SceneManager.LoadScene("level3");
+                    break;
+            }
+            manager.player.transform.position = new Vector3(0,0,0);
         }
-        manager.player.transform.position = new Vector3(0,0,0);
     }
 }

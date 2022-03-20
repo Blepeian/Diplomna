@@ -14,7 +14,7 @@ public class PlayerStats : MonoBehaviour
 
     public Item equippedItem = null;
     public float coinBuff = 1;
-    public ItemUI itemUI;
+    public ItemUI itemUI = null;
     
     private SpriteRenderer rend;
     public int level;
@@ -27,7 +27,6 @@ public class PlayerStats : MonoBehaviour
         currIFrameTime = 0;
         isInvincible = false;
         rend = gameObject.GetComponent<SpriteRenderer>();
-        itemUI = GameObject.FindWithTag("ItemUI").GetComponent<ItemUI>();
         currHealth = maxHealth;
     }
 
@@ -43,6 +42,15 @@ public class PlayerStats : MonoBehaviour
         {
             lvlDisplay = (LevelDisplay)GameObject.FindWithTag("LevelDisplay").GetComponent<LevelDisplay>();
             lvlDisplay.levelDisplay.text = "lvl." + level;
+        }
+
+        if(itemUI == null)
+        {
+            itemUI = GameObject.FindWithTag("ItemUI").GetComponent<ItemUI>();
+            if(equippedItem != null)
+            {
+                itemUI.icon.sprite = equippedItem.icon;
+            }
         }
 
         currIFrameTime -= Time.deltaTime;
