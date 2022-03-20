@@ -16,7 +16,7 @@ public class HealthItem : Item
         {
             interact.SetActive(false);
         }
-        icon = Resources.Load<Sprite>("hp_item_placeholder");
+        icon = Resources.Load<Sprite>("uncanny_heart");
     }
 
     private void Start()

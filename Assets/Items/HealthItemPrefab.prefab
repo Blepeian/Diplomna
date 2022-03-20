@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -1651910963
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b63eade35a68ba64795f2919777f84e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4614dd8f55ff0c24ea6d93127a4a87b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,9 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df52451c56635c438199a35cef9c2dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Uncanny Heart
   description: Gain 20% hp.
-  icon: {fileID: 21300000, guid: b63eade35a68ba64795f2919777f84e3, type: 3}
+  icon: {fileID: 21300000, guid: 4614dd8f55ff0c24ea6d93127a4a87b3, type: 3}
   stats: {fileID: 0}
   interact: {fileID: 8174140382544192131}
 --- !u!1 &8174140382544192131

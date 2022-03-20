@@ -16,7 +16,7 @@ public class InvincibilityItem : Item
         {
             interact.SetActive(false);
         }
-        icon = Resources.Load<Sprite>("iframe_item_placeholder");
+        icon = Resources.Load<Sprite>("soul_in_a_bottle");
     }
 
     private void Start()

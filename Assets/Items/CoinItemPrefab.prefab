@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -1651910963
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bb4b080d9458bca429f3ddfd14a9bd93, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a88709ac4d6c394ea3b208229725dcb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,9 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d69136e9ef8a6641bb9f00fcf08ad9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Golden Lizard's Severed Hand
   description: Gain 20% more coins from killing enemies.
-  icon: {fileID: 21300000, guid: bb4b080d9458bca429f3ddfd14a9bd93, type: 3}
+  icon: {fileID: 21300000, guid: 1a88709ac4d6c394ea3b208229725dcb, type: 3}
   stats: {fileID: 0}
   interact: {fileID: 8408811917557450824}
 --- !u!61 &1836503955611504996

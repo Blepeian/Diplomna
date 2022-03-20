@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -1651910963
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7de1dff802f843240b4f7e35165d92ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 547e2117bf7d9df4594bc71c17112b2f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   description: Increase invincibility time after taking damage.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 547e2117bf7d9df4594bc71c17112b2f, type: 3}
   stats: {fileID: 0}
   interact: {fileID: 9143907973394711395}
 --- !u!61 &3875155349289457326

@@ -18,7 +18,7 @@ public class CurrencyItem : Item
         {
             interact.SetActive(false);
         }
-        icon = Resources.Load<Sprite>("coin_item_placeholder");
+        icon = Resources.Load<Sprite>("golden_lizard_severd_hand");
     }
 
     private void Start()

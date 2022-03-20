@@ -52,7 +52,7 @@ public class PaidChestScript : MonoBehaviour
     {
         if(GameObject.FindWithTag("Player").GetComponent<PlayerStats>().currency >= price)
         {
-            int itemID = Random.Range(3, 4);
+            int itemID = Random.Range(1, 4);
             
             switch(itemID)
             {
