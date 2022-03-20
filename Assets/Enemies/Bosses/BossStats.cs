@@ -7,7 +7,6 @@ public class BossStats : MonoBehaviour
     public float maxHealth;
     public float currHealth;
     public int currencyToGive;
-    public int level;
     public Ability attack1;
     public Ability attack2;
     public PlayerStats playerStats = null;
@@ -19,10 +18,9 @@ public class BossStats : MonoBehaviour
 
     private void Awake()
     {
-        level = 1;
         currHealth = maxHealth;
         rend = gameObject.GetComponent<SpriteRenderer>();
-        bossHealthBar.SetHealthSliderOnly(currHealth);
+        bossHealthBar.SetHealthSliderOnly(currHealth, maxHealth);
         bossHealthBar.gameObject.SetActive(false);
     }
 
@@ -31,10 +29,6 @@ public class BossStats : MonoBehaviour
         if(playerStats == null)
         {
             playerStats = (PlayerStats)GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
-        }
-        if(playerStats.level > level)
-        {
-            LevelUp();
         }
 
         hitColorTime -= Time.deltaTime;
@@ -48,7 +42,7 @@ public class BossStats : MonoBehaviour
     {
         if(started)
         {
-            bossHealthBar.SetHealthSliderOnly(currHealth);
+            bossHealthBar.SetHealthSliderOnly(currHealth, maxHealth);
         }
         currHealth -= damage;
         rend.color = new Color(255f, 0f, 126f );
@@ -58,14 +52,6 @@ public class BossStats : MonoBehaviour
             Destroy(gameObject);
             playerStats.AddCurrency(currencyToGive);
         }
-    }
-
-    private void LevelUp()
-    {
-        maxHealth = 1.1f*maxHealth;
-        level = playerStats.level;
-        this.attack1.LevelUp(level);
-        this.attack2.LevelUp(level);
     }
 
     public void StartBattle()

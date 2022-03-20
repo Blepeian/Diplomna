@@ -47,14 +47,10 @@ public class GroundSlam : Ability
             if(direction)
             {
                 hits = Physics2D.BoxCastAll(castPoint.position, boxSize, 0f, Vector2.right, -attackRange,enemyLayer);
-                // Vector3 dir = castPoint.transform.TransformDirection(Vector3.right) * attackRange;  //For debugging purposes
-                // Debug.DrawRay(castPoint.position, dir, Color.red);
             }
             else
             {
                 hits = Physics2D.BoxCastAll(castPoint.position, boxSize, 0f, Vector2.left, attackRange,enemyLayer);
-                // Vector3 dir = castPoint.transform.TransformDirection(Vector3.left) * -attackRange;  //For debugging purposes
-                // Debug.DrawRay(castPoint.position, dir, Color.red);
             }
 
             foreach(RaycastHit2D enemy in hits)

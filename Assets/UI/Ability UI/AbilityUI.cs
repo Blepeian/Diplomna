@@ -28,7 +28,7 @@ public class AbilityUI : MonoBehaviour
             if(remainingCooldown > 0f)
             {
                 remainingCooldown -= Time.deltaTime;
-                cooldownText.text = "" + System.Math.Round(remainingCooldown, 2); //unity cannot convert an int directly into a string, so i added an empty one to curcumvent that issue
+                cooldownText.text = "" + System.Math.Round(remainingCooldown, 2); //unity cannot convert an int directly into a string, so i added an empty one to circumvent that issue
                 overlay.fillAmount = remainingCooldown / cooldown;
             }
 

@@ -45,12 +45,5 @@ public class DragonFireball : Ability
         }
     }
 
-    public override void LevelUp(int levelToGetTo)
-    {
-        while(level < levelToGetTo)
-        {
-            damage = 1.05f*damage;
-            level++;
-        }
-    }
+    public override void LevelUp(int levelToGetTo){}
 }
