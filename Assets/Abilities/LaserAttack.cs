@@ -33,10 +33,7 @@ public class LaserAttack : Ability
         {
             remainingCooldown -= Time.deltaTime;
         }
-    }
 
-    void FixedUpdate()
-    {
         if(remainingDuration > 0)
         {
             remainingDuration -= Time.deltaTime;
