@@ -19,8 +19,7 @@ public class PlayerAbilities : MonoBehaviour
     {
         level = GameObject.FindWithTag("Player").GetComponent<PlayerStats>().level;
         abilityNumber = 1;
-        // System.Type newAbility = System.Type.GetType("BasicAttack");
-        System.Type newAbility = System.Type.GetType("GroundSlam");
+        System.Type newAbility = System.Type.GetType("BasicAttack");
         Ability1 = (Ability)gameObject.AddComponent(newAbility);
         Ability1.castPoint = gameObject.transform;
         Ability1.level = level;
