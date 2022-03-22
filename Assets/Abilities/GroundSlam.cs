@@ -76,12 +76,13 @@ public class GroundSlam : Ability
         while(level < levelToGetTo)
         {
             damage = 1.1f*damage;
-            if(attackRange < 5f)
+            if(attackRange < 4f)
             {
                 attackRange = 1.1f*attackRange;
-                if(attackRange > 5f)
+                boxSize = new Vector2(2*attackRange, 1f);
+                if(attackRange > 4f)
                 {
-                    attackRange = 5f;
+                    attackRange = 4f;
                 }
             }
             if(knockback < 400f)
@@ -96,10 +97,10 @@ public class GroundSlam : Ability
         }
     }
 
-    // private void OnDrawGizmosSelected()  //For debugging purposes
-    // {
-    //     Gizmos.color = Color.red;
-    //     Vector2 start = new Vector2(castPoint.position.x, castPoint.position.y);
-    //     Gizmos.DrawWireCube(start, boxSize);
-    // }
+    private void OnDrawGizmosSelected()  //For debugging purposes
+    {
+        Gizmos.color = Color.red;
+        Vector2 start = new Vector2(castPoint.position.x, castPoint.position.y);
+        Gizmos.DrawWireCube(start, boxSize);
+    }
 }

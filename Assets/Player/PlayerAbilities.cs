@@ -19,8 +19,8 @@ public class PlayerAbilities : MonoBehaviour
     {
         level = GameObject.FindWithTag("Player").GetComponent<PlayerStats>().level;
         abilityNumber = 1;
-        string newAbilityName = "BasicAttack";
-        System.Type newAbility = System.Type.GetType(newAbilityName);
+        // System.Type newAbility = System.Type.GetType("BasicAttack");
+        System.Type newAbility = System.Type.GetType("GroundSlam");
         Ability1 = (Ability)gameObject.AddComponent(newAbility);
         Ability1.castPoint = gameObject.transform;
         Ability1.level = level;
@@ -51,21 +51,21 @@ public class PlayerAbilities : MonoBehaviour
                 Destroy(Ability1);
                 Ability1 = (Ability)gameObject.AddComponent(newAbility);
                 Ability1.castPoint = gameObject.transform;
-                Ability1.level = level;
+                Ability1.LevelUp(level);
                 Ability1.GetDataForUI(ui1);
                 break;
             case 2:
                 Destroy(Ability2);
                 Ability2 = (Ability)gameObject.AddComponent(newAbility);
                 Ability2.castPoint = gameObject.transform;
-                Ability2.level = level;
+                Ability2.LevelUp(level);
                 Ability2.GetDataForUI(ui2);
                 break;
             case 3:
                 Destroy(Ability3);
                 Ability3 = (Ability)gameObject.AddComponent(newAbility);
                 Ability3.castPoint = gameObject.transform;
-                Ability3.level = level;
+                Ability3.LevelUp(level);
                 Ability3.GetDataForUI(ui3);
                 break;
         }
