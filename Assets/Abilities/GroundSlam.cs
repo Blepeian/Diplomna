@@ -13,7 +13,7 @@ public class GroundSlam : Ability
 
     void Awake()
     {
-        cooldown = 3f;
+        cooldown = 2.5f;
         remainingCooldown = 0;
         abilityName = "Stomp";
         description = "Call on the old ones' strength and stomp the ground, sending enemies flying upwards for a short time.";

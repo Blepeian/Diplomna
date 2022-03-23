@@ -10,7 +10,7 @@ public class BasicAttack : Ability
 
     private void Awake()
     {
-        cooldown = 0.2f;
+        cooldown = 0.5f;
         remainingCooldown = 0;
         abilityName = "Stab";
         description = "Stab enemies with your dagger. Deals low damage but attacks fast.";

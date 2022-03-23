@@ -16,7 +16,7 @@ public class EldritchBlast : Ability
         remainingCooldown = 0;
         abilityName = "Eldritch Blast";
         description = "Channel the powers given to you by your slumbering ancient masters and let loose a bolt of eldritch energy at your enemy.";
-        damage = 20f;
+        damage = 40f;
         scriptName = "EldritchBlast";
         isCasting = false;
         icon = Resources.Load<Sprite>("eldritch_blast_icon");
