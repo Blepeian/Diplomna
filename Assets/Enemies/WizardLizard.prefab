@@ -195,7 +195,7 @@ MonoBehaviour:
   castPoint: {fileID: 5945087835059397296}
   abilityName: 
   description: 
-  cooldown: 3
+  cooldown: 2
   remainingCooldown: 0
   icon: {fileID: 0}
   isCasting: 0

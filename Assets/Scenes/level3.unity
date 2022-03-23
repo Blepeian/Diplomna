@@ -24342,7 +24342,6 @@ MonoBehaviour:
   maxHealth: 2000
   currHealth: 0
   currencyToGive: 400
-  level: 0
   attack1: {fileID: 2015328107}
   attack2: {fileID: 2015328106}
   playerStats: {fileID: 0}
@@ -24364,7 +24363,7 @@ MonoBehaviour:
   castPoint: {fileID: 731465649}
   abilityName: 
   description: 
-  cooldown: 2.5
+  cooldown: 2
   remainingCooldown: 0
   icon: {fileID: 0}
   isCasting: 0
@@ -24390,7 +24389,7 @@ MonoBehaviour:
   castPoint: {fileID: 731465649}
   abilityName: 
   description: 
-  cooldown: 4
+  cooldown: 2.5
   remainingCooldown: 0
   icon: {fileID: 0}
   isCasting: 0

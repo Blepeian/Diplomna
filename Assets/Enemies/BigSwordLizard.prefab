@@ -159,14 +159,14 @@ MonoBehaviour:
   castPoint: {fileID: 5816724284123333540}
   abilityName: 
   description: 
-  cooldown: 3
+  cooldown: 2.4
   remainingCooldown: 0
   icon: {fileID: 0}
   isCasting: 0
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
-  damage: 10
+  damage: 20
   attackRange: 2
 --- !u!114 &4382502031893558673
 MonoBehaviour:

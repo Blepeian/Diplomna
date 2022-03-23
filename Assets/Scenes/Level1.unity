@@ -227,14 +227,14 @@ MonoBehaviour:
   castPoint: {fileID: 21718588}
   abilityName: 
   description: 
-  cooldown: 3
+  cooldown: 2.4
   remainingCooldown: 0
   icon: {fileID: 0}
   isCasting: 0
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
-  damage: 10
+  damage: 20
   attackRange: 2
 --- !u!114 &21718586
 MonoBehaviour:
@@ -695,7 +695,7 @@ MonoBehaviour:
   castPoint: {fileID: 654394814}
   abilityName: 
   description: 
-  cooldown: 3
+  cooldown: 1.5
   remainingCooldown: 0
   icon: {fileID: 0}
   isCasting: 0
@@ -718,7 +718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2.6
   state: 0
-  moveDistance: 3
+  moveDistance: 2
   playerTransform: {fileID: 0}
   attackRange: 1.1
   body: {fileID: 654394809}
@@ -1021,7 +1021,7 @@ MonoBehaviour:
   castPoint: {fileID: 705340745}
   abilityName: 
   description: 
-  cooldown: 3
+  cooldown: 1.5
   remainingCooldown: 0
   icon: {fileID: 0}
   isCasting: 0
@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2.6
   state: 0
-  moveDistance: 0.5
+  moveDistance: 1
   playerTransform: {fileID: 0}
   attackRange: 1.1
   body: {fileID: 705340740}
@@ -1394,14 +1394,14 @@ MonoBehaviour:
   castPoint: {fileID: 993131372}
   abilityName: 
   description: 
-  cooldown: 3
+  cooldown: 2.4
   remainingCooldown: 0
   icon: {fileID: 0}
   isCasting: 0
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
-  damage: 10
+  damage: 20
   attackRange: 2
 --- !u!114 &993131370
 MonoBehaviour:
@@ -57716,7 +57716,7 @@ MonoBehaviour:
   castPoint: {fileID: 2014882647}
   abilityName: 
   description: 
-  cooldown: 3
+  cooldown: 1.5
   remainingCooldown: 0
   icon: {fileID: 0}
   isCasting: 0
@@ -58163,6 +58163,10 @@ PrefabInstance:
     - target: {fileID: 2501540813380376799, guid: 23cb88bd3f668854b9a850aac5b24934, type: 3}
       propertyPath: m_Name
       value: Lizard1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156514154617933653, guid: 23cb88bd3f668854b9a850aac5b24934, type: 3}
+      propertyPath: cooldown
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23cb88bd3f668854b9a850aac5b24934, type: 3}

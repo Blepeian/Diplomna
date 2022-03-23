@@ -159,12 +159,12 @@ public class PlayerAbilities : MonoBehaviour
 
         if(Ability2 != null)
         {
-            Ability2.GetDataForUI(ui1);
+            Ability2.GetDataForUI(ui2);
         }
 
         if(Ability3 != null)
         {
-            Ability3.GetDataForUI(ui1);
+            Ability3.GetDataForUI(ui3);
         }
     }
 }
