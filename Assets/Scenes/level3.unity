@@ -24131,7 +24131,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bael`or, The Dragon God
+  m_Text: Bael, The Dragon God
 --- !u!222 &1523072029
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class EldritchBlast : Ability
         cooldown = 2f;
         remainingCooldown = 0;
         abilityName = "Eldritch Blast";
-        description = "Channel the powers given to you by your slumbering ancient masters and let loose a bolt of eldritch energy at your enemy.";
+        description = "Channel the powers given to you by your ancient masters and let loose a bolt of eldritch energy at your enemy.";
         damage = 40f;
         scriptName = "EldritchBlast";
         isCasting = false;
