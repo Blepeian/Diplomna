@@ -166,7 +166,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
-  damage: 20
+  damage: 12
   attackRange: 2
 --- !u!114 &4382502031893558673
 MonoBehaviour:
