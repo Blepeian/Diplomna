@@ -237,6 +237,7 @@ MonoBehaviour:
   lookingRight: 1
   dodgingSpeed: 30
   dodgeCooldown: 1
+  camera: {fileID: 0}
 --- !u!114 &2010675020904377710
 MonoBehaviour:
   m_ObjectHideFlags: 0

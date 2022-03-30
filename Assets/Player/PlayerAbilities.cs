@@ -74,37 +74,28 @@ public class PlayerAbilities : MonoBehaviour
     {
         if(Input.GetButtonDown("Ability1") && Ability1 != null)
         {
-            if(!CheckCasting())
-            {
-                Ability1.Cast();
-                if(!ui1.onCooldown)
-                {
-                    ui1.StartCooldown();
-                }
-            }
+            Cast(Ability1, ui1);
         }
 
         if(Input.GetButtonDown("Ability2") && Ability2 != null)
         {
-            if(!CheckCasting())
-            {
-                Ability2.Cast();
-                if(!ui2.onCooldown)
-                {
-                    ui2.StartCooldown();
-                }
-            }
+            Cast(Ability2, ui2);
         }
 
         if(Input.GetButtonDown("Ability3") && Ability3 != null)
         {
-            if(!CheckCasting())
+            Cast(Ability3, ui3);
+        }
+    }
+
+    private void Cast(Ability abToCast, AbilityUI abUI)
+    {
+        if(!CheckCasting())
+        {
+            abToCast.Cast();
+            if(!abUI.onCooldown)
             {
-                Ability3.Cast();
-                if(!ui3.onCooldown)
-                {
-                    ui3.StartCooldown();
-                }
+                abUI.StartCooldown();
             }
         }
     }
@@ -121,18 +112,16 @@ public class PlayerAbilities : MonoBehaviour
             {
                 return true;
             }
-            goto Next;
         }
-        Next:
         if(Ability3 != null)
         {
             if(Ability3.isCasting)
             {
                 return true;
             }
-            goto Final;
         }
-        Final: return false;
+
+        return false;
     }
 
     private void LevelUp()

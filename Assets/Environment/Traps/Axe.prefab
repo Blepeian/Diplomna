@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  rotSpeed: 1.5
-  maxSwing: 1.5
+  rotSpeed: 1.25
+  maxSwing: 0.25
   rotPoint: {fileID: 2431218017957290706}
 --- !u!60 &6573158552165799122
 PolygonCollider2D:

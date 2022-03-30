@@ -15,11 +15,13 @@ public class PlayerStats : MonoBehaviour
     public Item equippedItem = null;
     public float coinBuff = 1;
     public ItemUI itemUI = null;
-    
-    private SpriteRenderer rend;
     public int level;
     public int currency;
+    
+    private SpriteRenderer rend;
     private int currencyToLevelUp = 100;
+    private float lvlUpHealthBuff = 1.2f;
+    private float lvlUpCostIncrease = 0.2f;
 
     private void Start()
     {
@@ -111,7 +113,7 @@ public class PlayerStats : MonoBehaviour
         {
             level++;
             lvlDisplay.LevelUp(level);
-            maxHealth = 1.2f*maxHealth;
+            maxHealth = lvlUpHealthBuff*maxHealth;
             if((currHealth + maxHealth/10) < maxHealth)
             {
                 if(!atMax)
@@ -124,7 +126,7 @@ public class PlayerStats : MonoBehaviour
                 atMax = true;
             }
             currency -= currencyToLevelUp;
-            currencyToLevelUp += (int)(0.2f * currencyToLevelUp);
+            currencyToLevelUp += (int)(lvlUpCostIncrease * currencyToLevelUp);
         }
 
         if(atMax)
