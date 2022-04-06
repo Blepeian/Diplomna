@@ -91,6 +91,7 @@ public class PlayerStats : MonoBehaviour
         if (currHealth <= 0)
         {
             Destroy(gameObject);
+            Destroy(GameObject.Find("LevelManager"));
             SceneManager.LoadScene("level1");
         }
     }
