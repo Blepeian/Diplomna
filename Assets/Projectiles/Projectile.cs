@@ -50,7 +50,7 @@ public class Projectile : MonoBehaviour
             {
                 col.collider.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
             }
-            else if(enemy.collider.gameObject.tag == "Boss")
+            else if(col.collider.gameObject.tag == "Boss")
             {
                 col.collider.gameObject.GetComponent<BossStats>().TakeDamage(damage);
             }
